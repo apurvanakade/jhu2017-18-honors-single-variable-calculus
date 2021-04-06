@@ -1,0 +1,96 @@
+\documentclass[9pt, a4paper, oneside, reqno]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+
+\pagestyle{fancy}
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Final}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\begin{questions}
+
+	\item (15 points) Determine, with proof, if the following series converge:
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $\sum \limits_{n = 2}^{\infty}  \dfrac{1}{n.(\log n)^\pi}$
+			\item $ \sum \limits_{n = 1}^{\infty}  \dfrac{\pi^n n!}{n^n}$
+		\end{enumerate}
+	\end{multicols}
+
+	\item (10 points) Compute the value of $\sqrt{e}$ correct up to 5 decimals. (Do not simplify your final answer, just prove that it is correct up to 5 decimal places.)
+
+	\item(20 points) Compute the following integrals:
+	\begin{enumerate}
+		\item $ \int \limits_0^1 x (1 - x)^{2017} dx$
+		\item $ \int \limits_0^{2 \pi} (x - \pi)^{2017} (1 + \sin ^{2018} x) dx$
+		\item $ \int \limits_0^{\infty} x^n e^{-x} dx$, where $ n$ is a positive integer
+		\item $\int \dfrac{1}{\sin^4 x + \cos^4 x} dx$ (I do not know how to solve this one.)
+	\end{enumerate}
+
+	\item (15 points) Prove the following by explicit computation.
+	\begin{align*}
+		\int \limits_0^1 \dfrac{x^4(1-x)^4}{1 + x^2} dx = \dfrac{22}{7} - \pi
+	\end{align*}
+	and hence conclude that $ 22/7 > \pi$.
+
+
+
+	\item (20 points) Suppose $ y(x)$ has the following Taylor series expansion at $ x= 0 $
+	\begin{align*}
+		y = a_0 + a_1 x+ a_2 x^2 + a_3 x^3 + a_4 x^4 + \dots
+	\end{align*}
+	\begin{enumerate}
+		\item If $ y$ satisfies the differential equation
+		      \begin{align*}
+			      y - y' = 1
+		      \end{align*}
+		      find the relations that $ a_i$ satisfy. If further $ y(0) = 1$, determine $ y$. Rewrite your final solution in terms of standard functions.
+		\item If $ y$ satisfies the differential equation
+		      \begin{align*}
+			      y + y'' = 0
+		      \end{align*}
+		      find the relations that $ a_i$ satisfy. If further $ y(0) = 0, y'(0) = 1$, determine $ y$. Rewrite your final solution in terms of standard functions.
+	\end{enumerate}
+
+	\item (20 points) Suppose $ f$ is a continuous function such that $$ \lim \limits_{x \rightarrow \infty} \dfrac{f(x)}{x^{2017}} = 0 = \lim \limits_{x \rightarrow -\infty} \dfrac{f(x)}{x^{2017}} $$ Prove that there exists a number $ c$ such that $$ f(c) = c^{2017}$$
+
+	\item (20 points) Prove that there does not exist a continuous function $ f$ on $ \mathbb{R}$ which takes every value exactly twice (i.e. for every $ c \in \mathbb{R}$ there exist exactly two real numbers $ x,y$ such that $ f(x) = c = f(y)$).
+
+	\item (25 points) Let $ a_n $ be a sequence bounded from above and below i.e. there are constants $ l$, $k$ such that $l < a_n < k$ for all $ n$.
+
+	Define the following sequences
+	\begin{align*}
+		x_n & = \sup \{ a_m : m \ge n\} = \sup \{ a_n, a_{n + 1}, a_{n + 2}, \dots \} \\
+		y_n & = \inf \{ a_m : m \ge n\} = \inf \{ a_n, a_{n + 1}, a_{n + 2}, \dots \}
+	\end{align*}
+	\begin{enumerate}
+		\item Determine $ x_n$, $ y_n$ when $ a_n = \dfrac{(-1)^n}{n}$.
+		\item Prove that $ \lim \limits_{n \rightarrow \infty} x_n$ and $ \lim \limits_{n \rightarrow \infty} y_n$ always exist.
+		\item Prove that if $ \lim \limits_{n \rightarrow \infty} a_n = L$ then $ \lim \limits_{n \rightarrow \infty} x_n = L = \lim \limits_{n \rightarrow \infty} y_n$.
+	\end{enumerate}
+\end{questions}
+\end{document}

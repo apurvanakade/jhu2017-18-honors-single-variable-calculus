@@ -1,0 +1,159 @@
+\documentclass[9pt, a4paper, oneside]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 07}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Integrals}
+In all the exercises you can assume that continuous functions are integrable.
+\begin{questions}
+	\item Divide the interval $ [0,1]$ into $ n$ equal subintervals. For the resulting partition $ P_n$ compute $ U(f,P_n)$ and $ L(f,P_n)$ for each of the following functions, and determine $ \int_{0}^1 f$ (if it exists)
+	\begin{enumerate}
+		\item $f(x) = 2$
+		\item $ f(x) = x$
+		\item $ f(x) = \begin{cases} x & \mbox{ if $x$ is rational} \\ 0 & \mbox{ otherwise} \end{cases}$
+	\end{enumerate}
+
+
+	\item
+	\begin{enumerate}
+		\item Prove that\hint{Start with a partition of $ [a,b]$ and construct a partition of $[ca,cb]$}
+		      \begin{align*}
+		      	\int _{ca}^{cb} f(t) dt = c\int _{a}^{b} f(ct) dt
+		      \end{align*}
+
+		\item Prove that
+		      \begin{align*}
+		      	\int_{a}^{ab} \dfrac{1}{t} dt = \int_{1}^b \dfrac{1}{t} dt
+		      \end{align*}
+
+		\item Prove that
+		      \begin{align*}
+		      	\int _{1}^a \dfrac{1}{t} dt + \int_{1}^b \dfrac{1}{t} dt = \int_{1}^{ab} \dfrac{1}{t} dt
+		      \end{align*}
+
+		\item 	Assuming that the area enclosed by the circle $ x^2 + y^2 = 1$ is $ \pi$ prove that the area enclosed by the ellipse $ x^2/a^2 + y^2/b^2 = 1$ is $ \pi a b$.
+	\end{enumerate}
+
+
+	\item Evaluate without doing any computations
+	\begin{enumerate}
+		\item $ \int \limits_{-1}^{1} x^3 \sqrt{1 - x^2} dx$
+		\item $ \int \limits_{-1}^{1} (x^5 + 3)\sqrt{1 - x^2} dx$
+	\end{enumerate}
+
+	\item Prove that
+	\begin{align*}
+		\int_{0}^t \dfrac{\sin t}{t+1} > 0
+	\end{align*}
+	for all $ t > 0$.
+\end{questions}
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Part 2 - Theorems}
+\begin{questions}[resume]
+	\item In this exercise we'll (almost) prove that every continuous function is integrable. In order to prove integrability we need a stronger version of continuity.
+
+	A function $ f$ is said to be \textbf{uniformly continuous} on a subset $ A$ of the real numbers if for every $ \epsilon > 0$ there exists a $ \delta > 0$ such that for all $ x,y \in A$ whenever $ |x - y| < \delta$ we have $ |f(x) - f(y)| < \epsilon$.
+
+	The difference between uniform continuity and (ordinary) continuity is that in uniform continuity the $ \delta$ does not depend on $ x$ i.e. the same $ \delta$ should work for all $ x$ in $ A$.
+	\begin{enumerate}
+		\item Prove that if $ f$ is uniformly continuous then it is also continuous.
+		\item Prove that the function $ f(x) = x$ is uniformly continuous on $ \mathbb{R}$.
+		\item Prove that the function $ f(x) = x^2$ is uniformly continuous on $ [0,1]$ but not on the entire real line $ \mathbb{R}$.
+		\item Prove that the function $ 1/x$ is not uniformly continuous on $ (0,1]$.
+	\end{enumerate}
+	A deep fact about continuous functions states that if $ f$ is continuous on $ [a,b]$ then it is uniformly continuous on $ [a,b]$. (This is because the set $ [a,b]$ is closed and bounded.)
+	\begin{enumerate}[resume]
+		\item Let $ f$ be a continuous (and hence uniformly continuous) function on $[a,b]$. Prove that for every $ \epsilon > 0$ there exists a partition $ P$ of $ [a,b]$ such that $ U(f,P) - L(f,P) < \epsilon$.\hint{The size of the intervals in the partition $ P$ should be bounded by the $ \delta$ corresponding to $ \epsilon / (b-a)$.} Conclude that $ f$ is integrable on $ [a,b]$.
+	\end{enumerate}
+
+	\item
+	Assume that $ f$ is a continuous increasing function.
+
+	\begin{enumerate}
+		\item Find $$ \int \limits_{f(a)}^{f(b)}f^{-1}(x) \: dx$$ in terms of $ \int_a^b f$. (Draw a picture) Be careful, there are multiple terms in the final answer.
+
+		\item Suppose that $ f(0) = 0$. Prove the \textbf{Young's inequality} which states that for all $ a,b > 0$ we have
+		      \begin{align*}
+		      	ab \le \int \limits_0 ^ a f(x) dx + \int \limits_0 ^ b f^{-1}(x) dx
+		      \end{align*}
+		      and equality holds if and only if $ b =f(a)$. (Draw a picture.)
+	\end{enumerate}
+\end{questions}
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Part 3 - Step functions}
+The interval $ [a,b]$ is the domain for all the functions in this problem set.
+\begin{questions}[resume]
+	\item A function $ s$ is called a \textbf{step function} if there is a partition $ (a = t_0, t_1, \ldots, t_n = b)$ such that $ s$ is constant on each $ (t_{i-1}, t_i)$.
+	\begin{enumerate}
+		\item Prove that if $ s_1$ and $ s_2$ are step functions then so is $ s_1 + s_2$.
+		\item Prove that if $ f$ is an integrable function then for every $ \epsilon > 0$ there exists a step function $ f \ge s$ such that
+		      \begin{align*}
+		      	\int_a ^b f - \int_a^b s < \epsilon
+		      \end{align*}
+		\item Prove that if $ f$ is an integrable function then for every $ \epsilon > 0$ there exists a step function $ f \le s$ such that
+		      \begin{align*}
+		      	\int_a ^b s - \int_a^b f < \epsilon
+		      \end{align*}
+		\item By drawing pictures show that a step function can be approximated by a continuous function, and the approximation can be made as good as we want.
+	\end{enumerate}
+	Step functions are a very important class of functions used extensively for approximating arbitrary functions.
+
+
+	\item
+	\begin{enumerate}
+		\item Suppose $ f$ is a continuous function and \begin{align*}
+		      \int_a^b fg = 0
+		\end{align*} for all continuous functions $ g$. Show that $ f(x) = 0$ for all $ x$ in $ [a,b]$.\hint{This has a one line proof. Construct a function $ g$ using the function $ f$.}
+
+		\item Suppose $ f$ is a continuous function and \begin{align*}
+		      \int_a^b fg = 0
+		\end{align*} for all continuous functions $ g$ which satisfy the additional condition $ g(a) = 0 = g(b)$. Show that $ f(x) = 0$ for all $ x$ in $ [a,b]$.\hint{Assume $ f(x) \neq 0$ and come up with a step function $ s$ non-zero near $ x$.}
+	\end{enumerate}
+
+\end{questions}
+
+\end{document}

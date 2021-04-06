@@ -1,0 +1,393 @@
+%!TEX root=ClassNotes.tex
+\section{Trig, Exp, and Log functions}
+We'll use the Fundamental Theorem of Calculus to compute the derivatives of trigonometric functions, exponentials, and logarithms.
+\subsection{Trigonometric Functions}
+In this section, we'll prove that
+\begin{align*}
+	(\cos x)' &= -\sin x\\
+	(\sin x)' &= \cos x
+	\end{align*}
+We'll only show this for $0 < x < \pi/2$, however,  the statements are true for all real numbers $x$.
+We'll do this by first computing $\left(\cos^{-1}x \right)'$ using basic geometry and the Fundamental Theorem and then using the formula for the derivative of inverse functions.
+
+\begin{exercise}
+	Consider the unit circle $x^2 + y^2 = 1$. In the following figure, the shaded region is a sector of angle $\theta$ (in radians), for $0 < \theta < \pi/2$, so that the corresponding point on the circle is $(\cos \theta, \sin \theta)$.
+	\begin{align*}
+		\adjincludegraphics[width=0.3\textwidth, valign=c]{pie1.png}
+		=
+		\adjincludegraphics[width=0.3\textwidth, valign=c]{pie2.png}
+		+
+		\adjincludegraphics[width=0.3\textwidth, valign=c]{pie3.png}
+	\end{align*}
+	\begin{enumerate}
+		\item Argue that the above decomposition of areas can be expressed algebraically as
+		      \begin{align*}
+			      \dfrac{\theta}{2}
+			       & =
+			      \dfrac{x \sqrt{1 - x^2}}{2}
+			      +
+			      \int \limits_x^1 \sqrt{1 - t^2} \: dt
+		      \end{align*}
+		      which can further be simplified to
+		      \begin{align*}
+			      \dfrac{\cos^{-1}x}{2}
+			       & =
+			      \dfrac{x \sqrt{1 - x^2}}{2}
+			      +
+			      \int \limits_x^1 \sqrt{1 - t^2} \: dt
+		      \end{align*}
+
+		\item Differentiate both sides to show that
+		      \begin{align*}
+			      \left(\cos^{-1}x \right)'
+			       & =
+			      -\dfrac{1}{\sqrt{1-x^2}}
+		      \end{align*}
+
+		\item Use the formula for the derivative of inverse function\footnote{$\left(f^{-1}(a)\right)'= \dfrac{1}{f'(f^{-1}(a))}$} to show that
+		      \begin{align*}
+			      (\cos \theta)' = -\sin \theta
+		      \end{align*}
+	\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+	Differentiate both sides of the trig identity
+	\begin{align*}
+		\sin^2 x  + \cos^2 x = 1
+	\end{align*}
+	and use your computation of $(\cos x)'$ to show that
+	\begin{align*}
+		(\sin x)' = \cos x
+	\end{align*}
+\end{exercise}
+
+\begin{exercise}
+	\begin{enumerate}
+		\item Use the formula for the derivative of inverse function to compute the derivative of $\sin ^{-1}x$.
+		\item What is the relationship between the derivatives of $\sin ^{-1}x$ and $\cos ^{-1}x$? Why do you think this is the case?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Compute the derivatives of $\tan x$ and $\tan^{-1} x$.
+\end{exercise}
+
+
+\subsection{Exponential Functions and Logarithms}
+Exponential functions are a bit tricky to define from first principles as every natural definition of $e^x$ uses either limits of sequences or differential equations.
+We'll instead give a more {\it ad hoc} definition of logarithms as in the book and {\it verify} that it satisfies the properties that logarithms are supposed to satisfy.
+
+\begin{definition}
+	Define the {\bf natural logarithm} to be the integral
+		\begin{align*}
+			\ln x = \int_1^x \dfrac{1}{t} \: dt
+		\end{align*}
+		for $x > 0$.
+\end{definition}
+\begin{remark}
+	As $\ln x$ is {\it defined} to be the antiderivative of $ 1 / x$,
+	\begin{align*}
+		\left(\ln x\right)'= \dfrac{1}{x}
+	\end{align*}
+\end{remark}
+\begin{exercise}
+	\begin{enumerate}
+		\item Draw the graph of $\dfrac{1}{x}$ for $x > 0$.
+		\item {\it Geometrically} argue that
+			\begin{align*}
+				\ln x \mbox{ is }
+				\begin{cases}
+					\mbox{positive } & \mbox{ if } x > 1\\
+					0 & \mbox{ if } x = 1\\
+						\mbox{negative } & \mbox{ if } x < 1
+				\end{cases}
+			\end{align*}
+		\item Using u-substitution\hint{In the u-substitution formula $
+		\int_a^z f(g(t)) g'(t)\: dt = \int_{g(a)}^{g(z)} f(u) \: du$ use $g(t) = x \cdot t$.} show that
+		\begin{align*}
+			\int_1^y \dfrac{1}{t} \: dt
+			&=
+			\int_x^{xy} \dfrac{1}{t} \: dt
+		\end{align*}
+		for real numbers $x , y > 0$. (You should think about what this means geometrically.)
+		\item Show that this implies that
+		\begin{align}
+			\label{eq:log_identity}
+			\ln x + \ln y = \ln xy
+		\end{align}
+	\end{enumerate}
+\end{exercise}
+This last identity \eqref{eq:log_identity} is the fundamental identity of logarithms.
+
+\begin{definition}
+	Define $\exp(x)$ to be the inverse function of $\ln x$ i.e.
+	\begin{align*}
+		\exp(\ln x) &= x \\
+		\ln(\exp x) &= x.
+	\end{align*}
+\end{definition}
+\begin{definition}
+	Define $e$ to be the value of $\exp(x)$ at $x = 1$.
+\end{definition}
+
+
+\begin{exercise}
+	\begin{enumerate}
+		\item Show that $\exp(0) = 1$.
+		\item Show that Equation \eqref{eq:log_identity} implies that
+		\begin{align*}
+			\exp(a + b) = \exp(a) \cdot \exp(b)
+		\end{align*}
+		\item Use this to argue that
+		\begin{align*}
+			\exp(n) = e^n
+		\end{align*}
+		where $n$ is a positive integer.
+		\item {\bf (Optional)} Extend the above statement first to negative integers and then to rational numbers.
+	\end{enumerate}
+	It follows then from continuity arguments that
+	\begin{align*}
+		\exp(x) = e^x
+	\end{align*}
+	for all real numbers $x$.
+\end{exercise}
+
+
+\begin{exercise}
+	Use the formula for the derivative of inverse function to show that
+	\begin{align*}
+		\left(e^x\right)'=e^x\\
+	\end{align*}
+\end{exercise}
+
+
+
+This completes the computation of derivatives of all the standard functions.
+
+\begin{exercise}
+	The Fundamental Theorem of Calculus says that if $f'(x)=g(x)$ then $f(x) = \int g(x)\: dx + c $, where $\int g(x)\: dx$ stands for the indefinite integral.
+	Go back to your derivative computations in this section and rewrite them as indefinite integrals.
+\end{exercise}
+
+We'll next use the u-substitution, and Integration by Parts to compute integrals of functions which can be written in terms of these standard functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\subsection{Trigonometric Identities}
+We'll need several trigonometric identities for computing integrals.
+While it is possible to derive these identities using Euclidean geometry, there is a much faster trick to derive these using {\it Euler's identity}.
+
+
+\subsubsection{Complex Numbers}
+First we need some basic algebraic facts about complex numbers. {\bf Complex numbers} are numbers of the form
+\begin{align*}
+	z = a + b i
+\end{align*}
+where $a$ and $b$ are real numbers and $i$ is a {\it formal} variable that satisfies
+\begin{align*}
+	i^2 = -1.
+\end{align*} The number $a$ is called the {\bf real part} of $z$, denoted $\mathrm{Re}(z)$, and the number $b$ is called it's {\bf imaginary part}, denoted $\mathrm{Im}(z)$.
+
+A real number $r$ can be thought of the complex number $ r + 0 i$. Thus the set of complex numbers contains the set of real numbers.
+
+As with real numbers, we can add, subtract, multiply, and
+divide complex numbers.
+\begin{example} Multiplying complex numbers:
+	\begin{align*}
+			(a + bi)(c - di)
+			&= a(c - di) + bi(c - di) \\
+			&= ac - adi + bci + bd  & \mbox{ as } i^2 = -1\\
+			&= (ac + bd) + i(-ad + bc)
+	\end{align*}
+\end{example}
+
+\begin{exercise}
+	\label{q:complex_conjugate}
+	Show that
+	\begin{align*}
+		(a + bi) (a - bi) = a^2 + b^2.
+	\end{align*}
+\end{exercise}
+
+The complex number $\overline{z} = a - bi$ is called the {\bf complex conjugate} of $z=a + bi$.
+By the above exercise, we get a real number after multiplying a complex number by it's conjugate which is an extremely useful fact.
+
+\begin{example}
+		Complex conjugates are useful when dividing complex numbers. To simplify a fraction, we multiply and divide by the complex conjugate of the denominator.
+		\begin{align*}
+			\dfrac{a+bi}{c+di}
+			&=
+			\dfrac{a+bi}{c+di} \cdot	\dfrac{c - di}{c-di}\\
+			&=
+			\dfrac{(a+bi)(c - di)}{c^2+d^2} & \mbox{ by Exercise \eqref{q:complex_conjugate}}\\\
+			&=
+			\dfrac{(ac + bd) + i(-ad + bc)}{c^2+d^2} \\
+			&=
+			\dfrac{ac + bd}{c^2+d^2}
+			+
+			i\cdot \dfrac{-ad + bc}{c^2+d^2}
+		\end{align*}
+\end{example}
+
+\begin{exercise}
+	Find the real and imaginary parts of the following complex numbers:
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $(2-3i)(i)$
+				\item $(2-3i)(1+i)$
+					\item $\dfrac{1}{i}$
+						\item $\dfrac{1}{1+i}$
+							\item $\dfrac{2-3i}{i}$
+								\item $\dfrac{2-3i}{1+i}$
+		\end{enumerate}
+	\end{multicols}
+\end{exercise}
+
+
+
+\subsubsection{Euler's Identity}
+It is possible to extend trigonometric and exponential functions (but not logarithms) to complex numbers.
+These functions have the same derivatives and integrals as in the real case.
+The following {\bf Euler's Identity} establishes a deep connection between trigonometric and exponential functions.
+\begin{theorem}[Euler's identity]
+\begin{align*}
+		e^{i \theta} = \cos \theta + i \sin \theta
+\end{align*}
+for all real numbers $\theta$.
+\end{theorem}
+The proof of this theorem requires us to extend the entire theory of calculus to complex numbers (called complex analysis) and is beyond the scope of this class.
+We'll simply use it as a fast method of (re)deriving several trig identities, and later on for doing integrals computations.
+
+\begin{example}
+	We know that
+	\begin{align*}
+		&& e^{i \theta} \cdot e^{-i \theta} &= e^0
+	\end{align*}
+	Simplifying the left hand side we get,
+	\begin{align*}
+		\Rightarrow
+		&&
+		(\cos \theta + i \sin \theta) \cdot (\cos (-\theta) + i \sin (-\theta)) &= e^0  \\
+		\Rightarrow
+		&&
+		(\cos \theta + i \sin \theta) \cdot (\cos \theta - i \sin \theta) &= 1  \\
+		\Rightarrow &&
+		\cos^2 \theta + \sin^2 \theta
+		&= 1 & \mbox{ by \eqref{q:complex_conjugate}}
+	\end{align*}
+	which is the fundamental identity of trigonometric functions.
+	(In the above derivation we used the fact that $\cos(-\theta) = \cos \theta$ and $\sin (-\theta) = - \sin \theta$.)
+\end{example}
+
+\begin{exercise}
+	Using Euler's identity and
+	\begin{align*}
+		\left(e^{i \theta}\right)^2 = e^{2i \theta}
+	\end{align*}
+	find the formulae for $\cos 2 \theta$ and $\sin 2 \theta$. (These are called the {\bf double angle formulae}.)
+\end{exercise}
+
+\begin{exercise}
+	\begin{enumerate}
+		\item
+		Using Euler's identity and
+		\begin{align*}
+			e^{i x} \cdot e^{i y}  = e^{i (x + y)}
+		\end{align*}
+		find the formulae for $\cos (x + y)$ and $\sin (x + y)$.
+		\item
+		Using Euler's identity and
+		\begin{align*}
+			e^{i x} \cdot e^{-i y}  = e^{i (x - y)}
+		\end{align*}
+		find the formulae for $\cos (x - y)$ and $\sin (x - y)$.
+	\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+	Using the previous exercise, show that
+ \begin{align*}
+		 2 \cos x \cos y &= \cos (x-y) + \cos(x+y) \\
+	 2 \sin x \sin y &= \cos (x-y) - \cos(x+y)\\
+		2 \sin x \cos y &= \sin (x-y) + \sin(x+y)
+ \end{align*}
+\end{exercise}
+
+We'll now apply these identities to compute some definite integrals.
+In later sections, we'll use these to compute indefinite integrals  such as $\int e^{ax} \sin {bx} \: dx$.
+
+\begin{exercise}
+	Let $n$ be an integer.
+	\begin{enumerate}
+		\item Draw graphs of
+		\begin{align*}
+			\sin x, \sin (-x), \sin 2x, \sin (-2x), \\
+			\cos x, \cos (-x), \cos 2x, \cos (-2x),
+		\end{align*} for $ -\pi \le x \le \pi$.
+		\item Geometrically argue that
+		\begin{align*}
+			\int_{-\pi}^{\pi} \cos (nt) \: dt &=
+			\begin{cases}
+				0 & \mbox{ if } n \neq 0 \\
+				2 \pi & \mbox{ if } n = 0
+			\end{cases}
+		\end{align*}
+		\item Geometrically argue that
+		\begin{align*}
+			\int_{-\pi}^{\pi} \sin (nt) \: dt &= 0
+		\end{align*}
+		\item Why do we need to make two cases for $\cos x$ but not for $\sin x$?
+	\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+	Let $m$ and $n$ be positive integers. Using the previous two exercises, show that
+		\begin{align*}
+			 \int_{-\pi}^{\pi} \cos (nt) \cos (mt) \: dt
+			 &=
+			 \begin{cases}
+			 	0 & \mbox{ if } m \neq n \\
+ 			 	\pi & \mbox{ if } m = n
+			 \end{cases} \\
+			 \int_{-\pi}^{\pi} \sin (nt) \sin (mt) \: dt
+			 &=
+			 \begin{cases}
+				0 & \mbox{ if } m \neq n \\
+				\pi & \mbox{ if } m = n
+			 \end{cases} \\
+			 \int_{-\pi}^{\pi} \cos (nt) \sin (mt) \: dt
+			 &=
+			 0
+		\end{align*}
+\end{exercise}
+These integrals are the foundational identities for Fourier analysis, which is one of the most powerful mathematical theories emerging out of elementary calculus.
+
+
+% \begin{exercise} Verify that
+% 	\begin{align*}
+% 			\cos \theta &= \dfrac{e^{i \theta} + e^{-i \theta}}{2} \\
+% 					\sin \theta &= \dfrac{e^{i \theta} - e^{-i \theta}}{2i}
+% 	\end{align*}
+% \end{exercise}
+%
+% \begin{exercise}
+% 	Compute the indefinite integrals
+% 	\begin{align*}
+% 		\int
+% 	\end{align*}
+% \end{exercise}

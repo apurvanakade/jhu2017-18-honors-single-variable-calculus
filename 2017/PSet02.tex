@@ -1,0 +1,151 @@
+\documentclass[9pt, a4paper, oneside]{amsart}
+
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+
+% \setlength{\topmargin}{-10mm}
+% \setlength{\textheight}{235mm}
+% \setlength{\oddsidemargin}{-3mm}
+% \setlength{\textwidth}{165mm}
+% \setlength{\footskip}{10mm}
+
+
+
+
+
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 02 - Limits}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1}
+
+
+The hardest thing about an $ \epsilon-\delta$ proof is realizing that the order in which we come up with the proof is different from the order in which we write it down, in some ways we need to start at the end.
+This week's goal is to make friends with these $ \epsilon-\delta$ proofs and hopefully also get good at them.\\
+
+\begin{questions}
+
+	\item Explain in your own words how the provisional definition of limit is equivalent to the more rigorous $\epsilon-\delta$ definition.
+
+	\begin{description}
+		\item[Provisional definition] The function $f$ approaches a limit $L$ near $a$ i.e. $\lim \limits _ {x \rightarrow a} f(x) = L$, if we can make $f(x)$ as close to $L$ as we like by requiring that $x$ be sufficiently close to, but unequal to, $a$.
+		\item[$\epsilon-\delta$ definition] The function $f$ {approaches a limit} $L$ near $a$ i.e. $\lim \limits _ {x \rightarrow a} f(x) = L$, if for every $\epsilon > 0$ there is some $\delta > 0$ such that, for all $x$,
+		\begin{align*}
+			\mbox{if $0 < |x - a| < \delta$, then $|f(x) - L| < \epsilon$.}
+		\end{align*}
+
+	\end{description}
+
+	\item For each of the following functions $f$ and real numbers $a$,
+	\begin{itemize}
+		\item Guess the limit $L = \lim \limits _ {x \rightarrow a} f(x)$.
+		\item Find a $\delta$ corresponding to $\epsilon = 1$ in the $\epsilon - \delta$ definition of limit.
+		\item Find a $\delta$ corresponding to an arbitrary real number $\epsilon$ and use this to \textbf{prove} that $L$ is indeed the limit.
+
+		      \begin{enumerate}
+		      	\item $f(x)=7x+ 2, \hspace{10pt} a=0$
+		      	\item $f(x)=|x|, \hspace{10pt} a=0$
+		      	\item $f(x)=x^2, \hspace{10pt} a=0$
+		      	\item $f(x)=x^2, \hspace{10pt} a=1$
+		      \end{enumerate}
+	\end{itemize}
+
+	\item
+	\begin{enumerate}
+		\item Use the $ \epsilon - \delta$ notation give a rigorous definition of the following statement,
+		      \begin{quote}
+		      	The function $f$ \emph{does not approach} the limit $L$ at $a$.
+		      \end{quote}
+		\item Using the $ \epsilon - \delta$ notation prove that the limit $ \lim \limits _ {x \rightarrow 0} x^2 \neq 1$.
+		\item For the function $ f(x) = \dfrac{1}{x}$
+		      prove that $ \lim \limits _ {x \rightarrow 0} f(x) \neq L$ for any real number $ L $. In this case we say that the \textbf{limit does not exist}.
+	\end{enumerate}
+
+\end{questions}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\section*{Part 2}
+
+\begin{questions}[resume]
+
+
+	\item Show that $ \lim \limits_{x \rightarrow a} f(x) = L$ if and only if $ \lim \limits_{x \rightarrow a^+} f(x) = L$ and $ \lim \limits_{x \rightarrow a^-} f(x) = L$.
+
+
+	\item For the function 	$$ f(x) = \begin{cases} x^2 .\sin {\dfrac{1}{x}} & \mbox{ if } x < 0 \\ 0 & \mbox{ otherwise }\end{cases}$$
+	Determine, with proof, the limits $ \lim \limits_{x \rightarrow 0^+} f(x)$, $ \lim \limits_{x \rightarrow 0^-} f(x)$ and $ \lim \limits_{x \rightarrow 0} f(x)$.
+	\item Determine, with proof, $\lim \limits_{x \rightarrow \infty} 1/x$.
+
+
+	\item
+	\begin{enumerate}
+		\item Show that for every $ \epsilon_1, \epsilon_2 \in \mathbb{R}$ the following inequality holds
+		      \begin{align*}
+		      	|\epsilon_1 - \epsilon _ 2| \le |\epsilon_1| + |\epsilon_2|
+		      \end{align*}
+		\item Using the $\epsilon-\delta$ definition of limit prove that if $\lim \limits _ {x \rightarrow a} f(x) = l > 0$ and $\lim \limits _ {x \rightarrow a} g(x) = m > 0$ then
+		      \begin{enumerate}
+		      	\item $\lim \limits _ {x \rightarrow a} \left(f(x)- g(x)\right) = l-m$
+		      	\item $\lim \limits _ {x \rightarrow a} \left(f(x). g(x)\right)  = lm$
+		      \end{enumerate}
+	\end{enumerate}
+
+
+	\item 		We say that $ \lim \limits _ {x \rightarrow a} f(x) = \infty$ if for all $ N$ there exists a $ \delta > 0$ such that for all $ x$, if $ 0 < |x - a| < \delta$ then $ f(x) > N$.
+	\begin{enumerate}
+
+		\item Show that $ \lim \limits_{x \rightarrow 0} {1}/{x^2} = \infty$.
+
+		\item Analogously define $ \lim \limits _ {x \rightarrow a^+} f(x) = \infty$ and show that $\lim \limits_{x \rightarrow 0^+} 1/x = \infty$.
+
+		\item Prove that $ \lim \limits_{x \rightarrow 0} {1}/{x} \not = \infty$.
+	\end{enumerate}
+
+
+
+	\item Give examples to show that the following definitions of $\lim \limits _ {x \rightarrow a} f(x) = L$ are not correct. (Hint: Think graphically)
+	\begin{enumerate}
+		\item For every $ \delta > 0$ there exists an $ \epsilon > 0$ such that if $ 0<|x-a|< \delta$ then $ |f(x) - L|< \epsilon$.
+		\item For every $\epsilon > 0$ there exists a $\delta > 0$ such that, for all $x$, if $|f(x) - L| < \epsilon$ then $0 < |x - a| < \delta$.
+	\end{enumerate}
+
+
+
+
+
+\end{questions}
+
+
+
+
+
+
+
+
+
+
+\end{document}

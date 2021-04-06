@@ -1,0 +1,173 @@
+\documentclass[9pt, a4paper, oneside]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 06}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Min-Max}
+\begin{questions}
+
+	\item If $ a_1 < a_2 < \cdots < a_n$ are real numbers,
+	\begin{enumerate}
+		\item Find the minimum value of the function $ f(x) = \sum \limits _ {i = 1}^n (x-a_i)^2$.
+		\item Now find the minimum value of
+		      $ f(x) = \sum \limits _ {i = 1}^n |x-a_i|$.
+		      \hint{Think graphically.}
+		\item If $ a > 0$, find the maximum value of the function
+		      \begin{align*}
+		      	f(x) = \dfrac{1}{1 + |x|} + \dfrac{1}{1+|x-a|}
+		      \end{align*}
+	\end{enumerate}
+
+	\item
+	\begin{enumerate}
+		\item Prove that if $ f'(x) \ge M$ for all $ x \in [a,b]$ then $ f(b) \ge f(a) + M(b-a)$.
+		\item Prove that if $ f'(x) \le M$ for all $ x \in [a,b]$ then $ f(b) \le f(a) + M(b-a)$.
+		\item Formulate a similar theorem when $ |f'(x)| \le M$ for all $ x$ in $ [a,b]$.
+	\end{enumerate}
+
+	\item Suppose that $ f'(x) > M > 0$ for all $ x$ in $ [0,1]$. Show that there is an interval of length $ \frac{1}{4}$ on which $ |f| \ge M/4$.
+	\hint{Compare $ f(x)$ with the line of slope $ M$ passing through $ f(0)$.}
+
+	\item Sketch the following functions and find their local maxima and minima:
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ \dfrac{x+1}{x^2 + 1}$
+			\item $ x + \dfrac{1}{x}$
+			\item $ \dfrac{x^2}{x^2-1}$
+			\item $ \dfrac{1}{1+x^2}$
+		\end{enumerate}
+	\end{multicols}
+
+
+	\item (Optional) Show that if $ f$ is twice differentiable with $ f(0) = 0$ and $ f(1) = 1$ and $ f'(0) = f'(1) = 0$ then $ |f''(x)| \ge 4$ for some $ x$ in $ [0,1]$.
+
+\end{questions}
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Part 2 - Applications}
+\begin{questions}[resume]
+	\item
+	\begin{enumerate}
+		\item What is the relationship between the critical points of $ f$ and $ f^2$?
+		\item Consider the straight line described by the equation $ Ax + By + C =0$. Show that the distance from the origin to this line is $ \dfrac{C}{\sqrt{A^2 + B^2}}$.
+	\end{enumerate}
+
+	\item Show that the sum of a positive number and it's reciprocal is at least 2.
+
+
+	\item Prove that if $ \dfrac{a_0}{1} + \dfrac{a_1}{2} +  \dfrac{a_2}{3} + \cdots + \dfrac{a_n}{n+1} = 0$ then $ a_0 + a_1 x + a_2 x^2 +\cdots a_n x^n = 0$ for some $ x$ in $ [0,1]$.
+
+
+	\item Prove that the function $ x^2 = \cos x$ has precisely 2 solutions. (Draw a picture.)
+
+	\item Prove that if $ n > 1$ and $ x>0 $ then $ (1+x)^n > 1 + nx$.
+
+	\item Suppose that $ f$ is continuous and differentiable on $ [0,1]$ such that $ f(x)$ is in $ [0,1]$ for each $ x$, and that $ f'(x) \neq 1$ for all $ x$ in $ [0,1]$. Show that there is exactly one number $ x$ in $ [0,1]$ such that $ f(x) = x$.
+
+	\item Suppose $ f$ and $g$ are two differentiable functions which satisfy $ f'g - g'f = 0$. Prove that if $ a$ and $ b$ are adjacent zeroes of $ f$, and $ g(a) \neq 0 $ and $ g(b) \neq 0$ then $ g(x) = 0$ for some $ x$ between $ a$ and $ b$. \hint{Proof by contradiction.}
+\end{questions}
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Part 3 - Applications}
+
+\begin{questions}[resume]
+	% \item
+	% \begin{enumerate}
+	% 	\item Give an example of a function $ f$ for which $ \lim \limits_{x \rightarrow \infty} f(x)$ exists but $ \lim \limits_{x \rightarrow \infty} f'(x)$ does not.
+	% 	\item Prove that if both $ \lim \limits_{x \rightarrow \infty} f(x)$ and  $ \lim \limits_{x \rightarrow \infty} f'(x)$ exist then  $ \lim \limits_{x \rightarrow \infty} f'(x) = 0$.
+	% \end{enumerate}
+
+
+
+	\item Prove that if $ f(0) = 0$ and $ f'(x)$ is increasing then the function $ g(x) = f(x) / x$ is increasing on $ (0,\infty)$.
+
+	This is a deceptively hard problem, try to work it out yourself, in case you get stuck use the following steps.
+	\begin{enumerate}
+		\item Write $ g(x)$ as the slope of an appropriate secant line. Then use the Mean Value Theorem to relate $ g(x)$ to the slope of some tangent.
+		\item Find $ g'(x)$ and rewrite it in terms of $ f'(x) $ and $ g(x)$.
+		\item Use parts (1)	 and (2)	to write $ g'(x)$ entirely in terms of $ f'$ and use this to conclude that $ g'(x) > 0$ for all $ x > 0$.
+	\end{enumerate}
+
+	\item
+	\begin{enumerate}
+		\item What is wrong with the following application of l'Hospital's rule:
+		      \begin{align*}
+		      	\lim \limits_{x \rightarrow 1} \dfrac{x^3 + x - 2}{x^2 - 3x + 2} 
+		      	=
+		      	\lim \limits_{x \rightarrow 1} \dfrac{3x^2 + 1}{2x - 3}
+		      	=
+		      	\lim \limits_{x \rightarrow 1} \dfrac{6x}{2}
+		      	=
+		      	3
+		      \end{align*}
+		      What is the correct limit?
+
+		\item Find the following limits
+		      \begin{multicols}{2}
+		      	\begin{enumerate}
+		      		\item $\lim \limits_{x \rightarrow 0} \dfrac{\tan x}{x}$
+		      		\item $\lim \limits_{x \rightarrow 0} \dfrac{\cos^2 x - 1}{x^2}$
+		      	\end{enumerate}
+		      \end{multicols}
+	\end{enumerate}
+
+	\item l'Hospital's rule is used in various forms all of which are closely related to each other.
+
+	\begin{quote}
+		\textbf{l'Hospital's rule:} If $ \lim \limits_{x \rightarrow 0^+} f(x) = \lim \limits_{x \rightarrow 0^+} g(x)$ and both are equal to either 0 or $ \infty$, and if $\lim \limits_{x \rightarrow 0^+} \dfrac{f'(x)}{g'(x)} = l$ then $\lim \limits_{x \rightarrow 0^+} \dfrac{f(x)}{g(x)} = l$.
+	\end{quote}
+
+	Using only algebraic manipulations (no complicated proofs) derive the following versions from the above theorem.
+	\begin{enumerate}
+		\item If $ \lim \limits_{x \rightarrow 0^-} f(x) = \lim \limits_{x \rightarrow 0^-} g(x) = 0 \mbox{ or } \infty$ and if $\lim \limits_{x \rightarrow 0^-} \dfrac{f'(x)}{g'(x)} = l$ then $\lim \limits_{x \rightarrow 0^-} \dfrac{f(x)}{g(x)} = l$.
+		\item If $ \lim \limits_{x \rightarrow \infty} f(x) = \lim \limits_{x \rightarrow \infty} g(x) = 0 \mbox{ or } \infty$ and if $\lim \limits_{x \rightarrow \infty} \dfrac{f'(x)}{g'(x)} = l$ then $\lim \limits_{x \rightarrow \infty} \dfrac{f(x)}{g(x)} = l$.
+	\end{enumerate}
+
+
+\end{questions}
+
+
+\end{document}

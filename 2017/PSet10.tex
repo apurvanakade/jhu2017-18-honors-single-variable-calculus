@@ -1,0 +1,130 @@
+\documentclass[9pt, a4paper, oneside, reqno]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 10}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Taylor series}
+\begin{questions}
+	\item For the polynomial $ p(x) = x^3$ compute the Taylor polynomial at $x=1$ of degree 3. Simplify the Taylor polynomial and verify that it equals the original polynomial.
+
+	\item Compute the Taylor polynomial of the following functions:
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ e^{\sin x}$ at $ x=0$, degree 3
+			\item $ \dfrac{1}{x+1}$ at $ x=0$, degree $ n$
+		\end{enumerate}
+	\end{multicols}
+
+
+	\item In this exercise we'll compute the \textbf{remainder term} of the Taylor polynomial. Assume that the function $ f$ is differentiable enough number of times. Consider the Taylor polynomial of the $ f(x)$ at $ x=0$ of degree $ n$.
+	\begin{align*}
+		P_{n}(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n &   & a_i = \dfrac{f^{(i)}(0)}{i!}
+	\end{align*}
+	\begin{quote}
+		\textbf{Theorem.} The remainder term $ R_{n}(x) = f(x) - P_{n}(x)$ equals
+		\begin{align*}
+			R_{n}(x)  = \int \limits_0^x \dfrac{f^{(n+1)}(t)}{n!} \cdot (x-t)^n \: dt
+		\end{align*}
+	\end{quote}
+	\begin{enumerate}
+		\item Prove the theorem directly for $ n = 0$. (Note: $ 0! = 1$.)
+		\item Find the Taylor polynomial of $ f'(x)$ at $ x=a$ of degree $ n-1$.
+		\item Assume the following Leibniz's identity:
+		      \begin{align*}
+		      	\mbox{ If } g(x) = \int \limits_0^x f(x,t) \: dt \mbox{ then } g'(x) = f(x,x) + \int \limits_0^x \dfrac{\partial f(x,t)}{\partial x} \: dt
+		      \end{align*}
+		      (This very useful trick is called \emph{differentiating under the integral sign}, unfortunately we do not have enough language to prove this.)
+
+		      Use part (2) and induction on the degree $ n$ to prove the Theorem.
+	\end{enumerate}
+
+	\item This is a very difficult problem to write down rigorously, for this one it's ok to be vague in your arguments. In this problem $ n,k$ are positive integers and all the Taylor series are at $ x=0$. \hint{It is very crucial here that you're only asked to find the derivatives at $ x=0$.}
+	\begin{enumerate}
+		\item If $ f(x) = x^ng(x)$. Find the Taylor series of $ f(x)$ in terms of Taylor series of $g(x)$ (Don't think too hard). Hence find $ f^{(k)}(0)$ in terms of the derivatives of $ g$.
+		\item If $ f(x) = g(x^2)$ find $ f^{(k)}(0)$ in terms of the derivatives of $ g$. Hence find the Taylor series for $ f$ in terms of $ g$.
+		\item Find the Taylor series for $ e^{(x^2)}$.
+		\item If $ f(x) = g(x^n)$, find $ f^{(k)}(0)$ in terms of the derivatives of $ g$. Hence find the Taylor series of $ f$ in terms of $ g$.
+		\item Find the Taylor series for $ \sin (x^4)$.
+	\end{enumerate}
+
+\end{questions}
+
+
+\section*{Part 2 - Numerical Computations}
+For this week's HW you're allowed (and required) to use wolframalpha (or calculator) to do the computations/simplify large fractions.
+
+A table of Taylor series can be found on Pg. 426 in the book.
+\begin{questions}[resume]
+	\item
+	\begin{enumerate}
+		\item Suppose the coefficients of Taylor series of $ f$ are $ c_i$ and of $ g$ are $ d_i$ at $ x=a$. Find the Taylor series of $ fg$ at $ x=a$ in terms of $ c_i, d_i$.
+		\item Find the general formula for the $ n^{th}$ derivative of the product ${ (fg)^{(n)}}(a) $ in terms of the derivatives of $ f$, $ g$ at $ a$.
+	\end{enumerate}
+
+	\item Use estimates on the remainder term of the appropriate Taylor series to compute the following quantities within the prescribed error.
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ \cos 1$, error $ < 10^{-2}$
+			\item $ \sin 0.01$, error $ < 10^{-10}$
+			\item $ e$, error $ < 10^{-2}$
+			\item $ \log 1.1$, error $ < 10^{-4}$
+		\end{enumerate}
+	\end{multicols}
+
+	\item Show that the remainder terms for the Taylor series of $ \log(1+x)$ and $ \arctan(x)$ at $ x=0$ grows with $ n$ when $ x > 1$. (Hence the standard Taylor series cannot be used to approximate these numbers.)
+
+	\item Taylor series are useful in theory but not so great for numerical approximations in practice.
+	\begin{enumerate}
+		\item Find the value of $ \pi/4$ correct up to 1 decimal place using Taylor series of $ \arctan(x)$. How many terms of the Taylor series will you need, to determine the value of $ \pi/4$ correct up to 2 decimal places?
+
+		\item Prove the following identities:
+		      \begin{align*}
+		      	\tan(x+y)               & = \dfrac{\tan x + \tan y}{1 - \tan x \tan y}    \\
+		      	\arctan(u) + \arctan(v) & = \arctan \left( \dfrac{u + v}{1 - u v} \right) \\
+		      \end{align*}
+		\item Show that
+		      \begin{align*}
+		      	\dfrac{\pi}{4} & = \arctan \dfrac{1}{2} + \arctan \dfrac{1}{3}    \\
+		      	\dfrac{\pi}{4} & = 4\arctan \dfrac{1}{5} - \arctan \dfrac{1}{239}
+		      \end{align*}
+		\item Use the second formula in part (3) to compute $ \pi$ correct up to 4 decimal places.
+	\end{enumerate}
+
+\end{questions}
+
+
+\newpage
+\section*{Part 3 - Integral Computations}
+\begin{questions}[resume]
+	\item For this week do Q.3, and Q.4 problems - i) to v) on Pg. 378-379 from Ch.19. \\\\
+
+\end{questions}
+
+
+\end{document}

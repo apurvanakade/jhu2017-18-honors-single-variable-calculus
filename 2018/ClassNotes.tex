@@ -1,0 +1,105 @@
+\documentclass[a4paper, oneside]{article}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{changepage}
+\usepackage{amsfonts}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width \textwidth height 0.4pt
+  \kern 2pt
+}
+\usepackage{color}
+\usepackage{perpage} %the perpage package
+  \MakePerPage{footnote} %the perpage package command
+\usepackage{graphicx}
+  \graphicspath{ {./images/} }
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  linkcolor={blue},
+  citecolor={blue},
+  urlcolor={blue}
+}
+% \usepackage[margin=1.5in]{geometry}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{array}
+
+
+%for setting the equation number to sync with the theorem numbers
+\numberwithin{equation}{section}
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\rhead{\scshape Apurva Nakade}
+\lhead{\scshape Honors Single Variable Calculus 2018}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\thispagestyle{fancy}
+
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+\newcommand{\R}{\mathbb{R}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{prop}[equation]{Proposition}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{claim}[equation]{Claim}
+\newtheorem{axiom}[equation]{Axiom}
+\newtheorem{lemma}[equation]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem{example}[equation]{Example}
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{note}[equation]{Note}
+\newtheorem{exercise}[equation]{Exercise.}
+\newtheorem{q}[equation]{Q.}
+\newtheorem*{q*}{Q}
+\newtheorem*{exercise*}{Exercise}
+
+
+\newenvironment{indentPara}
+    {
+    \begin{adjustwidth}{2.5em}{2.5em}
+    }
+    {
+    \end{adjustwidth}
+    }
+
+\title{Honors Single Variable Calculus}
+\author{Apurva Nakade\\JHU}
+\date{}
+
+% \includeonly{08Computations}
+\begin{document}
+  \cleardoublepage
+  \pagenumbering{gobble}
+  \maketitle
+  \tableofcontents
+  \cleardoublepage
+  \pagenumbering{arabic}
+
+  \include{01Proofs}
+  \include{02Inequalities}
+  \include{03LimitsContinuity}
+  \include{04Supremum}
+  \include{05Derivative}
+  \include{06Integrals}
+  \include{07FundamentalTheorem}
+  \include{08TrigExpLog}
+  \include{09Computations}
+  \include{10ApplicationIntegrals}
+  \include{11Taylor}
+
+  \include{Appendix}
+
+\end{document}

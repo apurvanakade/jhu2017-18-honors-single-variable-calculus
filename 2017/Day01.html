@@ -1,0 +1,347 @@
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <meta name="GENERATOR" content="Mozilla/4.04 (Macintosh; I; PPC) [Netscape]">
+    <title>Day 01</title>
+  </head>
+
+  <body>
+
+    Your first assignment is to understand the following notes, solve the Exercises and submit mathematically rigorous solutions. Due date: <b>Friday, Sept 8.</b>
+    <p> In class <b>you should read the Exercises first</b>, then come back and read the notes and try to recreate the proof as in the examples. This way you won't spend the entire class time reading and will actually get to discuss some problems. You're
+      free and in fact encouraged to discuss the problems with other students and/or the instructor.
+    </p>
+
+    <center>
+      <h1>Introduction to Proofs</h1>
+    </center>
+    Proofs are the heart of mathematics. You must come to terms with proofs--you must be able to read, understand and write them. What is the secret? What magic do you need to know? The short answer is: there is no secret, no mystery, no magic. All that is
+    needed is some common sense and a basic understanding of a few trusted and easy to understand techniques.
+    <h2>The Structure of a Proof</h2>
+    <font color="#CA1619">The basic structure of a proof is easy: it is just a series of statements, each one being either</font>
+    <ul>
+      <li>
+        <font color="#CA1619">An assumption or</font>
+      </li>
+
+      <li>
+        <font color="#CA1619">A conclusion, clearly following from an assumption or previously proved result.</font>
+      </li>
+    </ul>
+    And that is all. Occasionally there will be the clarifying remark, but this is just for the reader and has no logical bearing on the structure of the proof.
+
+    <p>A well written proof will flow. That is, the reader should feel as though they are being taken on a ride that takes them directly and inevitably to the desired conclusion without any distractions about irrelevant details. Each step should be clear
+      or at least clearly justified. A good proof is easy to follow.
+
+    </p>
+    <p>When you are finished with a proof, apply the above simple test to every sentence: is it clearly (a) an assumption or (b) a justified conclusion? If the sentence fails the test, maybe it doesn't belong in the proof.
+    </p>
+    <h2>
+An Example: The Irrationality of the Square Root of 2</h2> In order to write proofs, you must be able to read proofs. See if you can follow the proof below. Don't worry about how you would have (or would not have) come up with the idea for the proof. Read the proof with an eye towards the criteria listed
+    above. Is each sentence clearly an assumption or a conclusion? Does the proof flow? Was the theorem in fact proved?
+
+    <p>Before we begin the proof, let's recall a few definitions. A real number is called <b>rational </b>if it can be expressed as the ratio of two integers: p/q. The ancient Greeks thought that all numbers were rational. A number that is not rational would
+      be called <b>irrational</b>. You probably believe that
+      <font face="Symbol">p</font> is irrational. (It might surprise you that this is not easy to prove.) When the Greeks proved that the square root of 2 is not a rational number, the very foundations of arithmetic were called into question. This is one of the reasons that
+      Greek geometry subsequently flourished--all numbers could be treated geometrically without reference to rationality.
+
+    </p>
+    <p>Another fact that we will need is the <b>Fundamental Theorem of Arithmetic</b>. This exciting sounding theorem is nothing more than the fact that every positive integer has a unique representation as a product of prime numbers. The technique of proof
+      we will use is proof by <b>contradiction </b>. You do not need any specialized knowledge to understand what this means. It is very simple. We will assume that the square root of 2 <b>is</b> a rational number and then arrive at a contradiction. Make
+      sure you understand every line of the proof.
+
+    </p>
+    <p><b>Theorem.</b> The square root of 2 is an irrational number.
+
+    </p>
+    <p><b>Proof.</b> Let's represent the square root of 2 by s. Then, by definition, s satisfies the equation
+    </p>
+    <center></center>
+
+    <center>s<sup>2</sup> = 2.</center>
+
+
+    <p>If s were a rational number, then we could write
+    </p>
+    <center></center>
+
+    <center>s = p/q</center>
+
+
+    <p>where p and q are a pair of integers. Infact, by dividing out the common multiple if neccessary, we may even assume p and q have no common multiple (other than 1). If we now substitute this into the first equation we obtain, after a little algebra,
+      the equation
+    </p>
+    <center></center>
+
+    <center>p<sup>2</sup> = 2 q<sup>2</sup> .</center>
+
+
+    <p>But now, by the Fundamental Theorem of Arithmetic, 2 must appear in the prime factorization of the number p<sup>2</sup> (since it appears in the same number 2 q<sup>2</sup>). Since 2 itself is a prime number, 2 must then appear in the prime factorization
+      of the number p. But then, 2<sup>2</sup> would appear in the prime factoriztion of p<sup>2</sup>, and hence in 2 q
+      <sup>2</sup>. By dividing out a 2, it then appears that 2 is in the prime factorization of q<sup>2</sup>. Like before (with p<sup>2</sup>) we can now conclude 2 is a prime factor of q. But now we have p and q sharing a prime factor, namely 2. This
+      violates our assumption above (see if you can find it) that p and q have no common multiple other than 1.
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+
+
+
+
+
+    <center>
+      <h1>
+Direct Proofs</h1></center>
+    Let's start with an example.
+    <h2>
+Example: Divisibility is Transitive</h2> If a and b are two natural numbers, we say that <b>a divides b</b> if there is another natural number k such that b = a k. For example, 2917 divides 522143 because there is a natural number k (namely k = 179) such that 522143 = 2917 k.
+
+    <p><b>Theorem.</b> If a divides b and b divides c then a divides c.
+
+    </p>
+    <p><b>Proof.</b> By our assumptions, and the definition of divisibility, there are natural numbers k<sub>1</sub> and k<sub>2</sub> such that
+
+    </p>
+    <p></p>
+    <center>b = a k<sub>1</sub> and c = b k<sub>2</sub>.</center>
+
+    <p>Consequently,
+
+    </p>
+    <p></p>
+    <center>c = b k<sub>2</sub> = a k<sub>1</sub> k<sub>2</sub>.</center>
+
+
+    <p>Let k = k<sub>1</sub> k<sub>2</sub>. Now k is a natural number and c = a k, so by the definition of divisibility, a divides c.
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2>
+If P, Then Q</h2> Most theorems that you want to prove are either explicitly or implicity in the form "If P, Then Q". In the previous example, "P" was "If a divides b and b divides c" and "Q" was "a divides c". This is the standard form of a theorem (though it can
+    be disguised). A direct proof should be thought of as a flow of implications beginning with "P" and ending with "Q".
+
+    <p></p>
+    <center>P -&gt; ... -&gt; Q</center>
+
+
+    <p>Most proofs are (and should be) direct proofs. Always try direct proof first, unless you have a good reason not to.
+
+    </p>
+    <h2>
+It Seems Too Easy</h2> If you find a simple proof, and you are convinced of its correctness, then don't be shy about. Many times proofs are simple and short.
+
+    <p>In the theorem below, a <b>perfect square</b> is meant to be an integer in the form a<sup>2</sup> where a itself is an integer and an <b>odd integer</b> is any integer in the form 2a+1 where a is an integer.
+
+    </p>
+    <p><b>Theorem.</b> Every odd integer is the difference of two perfect squares.
+
+    </p>
+    <p><b>Proof.</b> Suppose 2a+1 is an odd integer, then
+    </p>
+    <center>2a+1 = (a+1)<sup>2</sup> - a<sup>2</sup>.</center>
+
+    <div align="right">
+      &#8718;
+    </div>
+    Where's the proof? It's there. It's just very short.
+
+
+    <h2> One-to-One Functions </h2> A function f:X-&gt;Y is called <b> one-to-one</b> if for any pair a, b in X such that f(a) = f(b) then a = b. Also, if f:X-&gt;Y and g:Y-&gt;Z are two functions then the composition gf:X-&gt;Z is the function defined by gf(a) = g(f(a)) for every
+    a in X. Note that the composition gf is only defined if the domain of f is contained in the range of g.
+
+    <p><b> Theorem.</b> If two one-to-one functions can be composed then their composition is one-to-one.
+
+    </p>
+    <p><b> Proof.</b> Let a and b be in X and assume gf(a) = gf(b). Thus, g(f(a)) = g(f(b)), and since g is one-to-one we may conclude that f(a) = f(b). Finally, since f is one-to-one, a = b.
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2> Roots of Polynomials</h2> A number r is called a <b> root </b> of the polynomial p(x) if p(r) = 0.
+
+    <p><b>Theorem.</b> If r<sub>1</sub> and r<sub>2</sub> are distinct roots of the polynomial p(x) = x<sup>2</sup> + b x + c, then r<sub>1</sub> + r<sub>2</sub> = - b and r<sub>1</sub> r<sub>2</sub> = c.
+
+    </p>
+    <p><b>Proof.</b> It follows from our assumptions that p(x) will factor
+
+    </p>
+    <p></p>
+    <center> p(x) = (x - r<sub>1</sub>) (x - r<sub>2</sub>)</center>
+
+    <p> If we expand the right hand side we get
+
+    </p>
+    <p></p>
+    <center> p(x) = x<sup>2</sup> - (r<sub>1</sub> + r<sub>2</sub>) x + r<sub>1</sub> r<sub>2</sub>. </center>
+
+    <p> Compare the coefficients above with those of p(x) = x<sup>2</sup> + b x + c to get r
+      <sub>1</sub> + r<sub>2</sub> = - b and r<sub>1</sub> r<sub>2</sub> = c.
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2>
+Exercises</h2> Prove each of the following.
+    <ol>
+      <p></p>
+      <li>
+        If a divides b and a divides c then a divides b + c. (Here a, b, and c are positive natural numbers and the definition of divisibility is given above.)
+      </li>
+
+      <p></p>
+      <li>
+        If a is an integer, divisible by 4, then a is the difference of two perfect squares.
+      </li>
+
+      <p></p>
+      <li>
+        If a and b are real numbers, then a<sup>2</sup> + b<sup>2</sup> &gt;= 2 a b.</li>
+
+      <p></p>
+      <li> The sum of two rational numbers is a rational number.
+
+        <p></p>
+      </li>
+      <li> If two onto functions can be composed then their composition is onto. (A function f:X-&gt;Y is called <b> onto </b> if for every b in Y there is an element a in X such that f(a) = b. )
+
+        <p></p>
+      </li>
+      <li> If r<sub>1</sub>, r<sub>2</sub>, r<sub>3</sub> are three distinct (no two the same) roots of the polynomial p(x) = x<sup>3</sup> + b x<sup>2</sup> + c x+ d, then r<sub>1</sub> r<sub>2</sub> + r<sub>1</sub> r<sub>3</sub> + r<sub>2</sub> r<sub>3</sub>        = c.
+
+
+      </li>
+    </ol>
+
+
+    <center>
+      <h1>
+Proof by Contradiction</h1></center>
+
+    In a proof by contradiction we assume, along with the hypotheses, the <b> logical negation </b> of the result we wish to prove, and then reach some kind of contradiction. That is, if we want to prove "If P, Then Q", we assume P and Not Q. The contradiction
+    we arrive at could be some conclusion contradicting one of our assumptions, or something obviously untrue like 1 = 0. Read the proof of the irrationality of the square root of 2 in the <a href="http://zimmer.csufresno.edu/~larryc/proofs/proofs.introduction.html">introduction</a>    for an example.
+
+    <p> Here are a few more examples.
+
+    </p>
+    <h2>  Infinitely Many Primes </h2> One of the first proofs by contradiction is the following gem attributed to Euclid.
+
+    <p><b>Theorem.</b> There are infinitely many prime numbers.
+
+    </p>
+    <p><b>Proof.</b> Assume to the contrary that there are only finitely many prime numbers, and all of them are listed as follows: p<sub>1</sub>, p<sub>2</sub> ..., p<sub>n</sub>. Consider the number q = p<sub>1</sub>p<sub>2</sub>... p<sub>n</sub> + 1.
+      The number q is either prime or composite. If we divided any of the listed primes p<sub>i</sub> into q, there would result a remainder of 1 for each i = 1, 2, ..., n. Thus, q cannot be composite. We conclude that q is a prime number, not among the
+      primes listed above, contradicting our assumption that <b> all</b> primes are in the list p<sub>1</sub>, p<sub>2</sub> ..., p<sub>n</sub>.
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <p> Proof by contradiction is often used when you wish to prove the impossibility of something. You assume it is possible, and then reach a contradiction. In the examples below we use this idea to prove the impossibility of certain kinds of solutions
+      to some equations.
+
+    </p>
+    <h2>Example: A Diophantine Equation</h2> A <b>Diophantine equation</b> is an equation for which you seek integer solutions. For example, the so-called pythagorean triples (x, y, z) are positive integer solutions to the equation x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup>. Here is another.
+
+    <p><b>Theorem.</b> There are no positive integer solutions to the diophantine equation x<sup>2</sup> - y<sup>2</sup> = 1.
+
+    </p>
+    <p><b>Proof.</b> (Proof by Contradiction.) Assume to the contrary that there is a solution (x, y) where x and y are positive integers. If this is the case, we can factor the left side: x<sup>2</sup> - y<sup>2</sup> = (x-y)(x+y) = 1. Since x and y are
+      integers, it follows that either x-y = 1 and x+y = 1 or x-y = -1 and x+y = -1. In the first case we can add the two equations to get x = 1 and y = 0, contradicting our assumption that x and y are positive. The second case is similar, getting x =
+      -1 and y = 0, again contradicting our assumption.
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+
+    <h2> Example: Rational Roots</h2> There is a formula for solving the general cubic equation a x<sup>3</sup> + b <sup>2</sup> c x + d = 0, that is more complicated than the qaudratic equation. But in this example, we wish to prove there is no rational root to a particular cubic equation
+    without have to look at the general cubic formula.
+
+    <p><b>Theorem.</b> There are no rational number solutions to the equation x<sup>3</sup> + x + 1 = 0.
+
+    </p>
+    <p><b>Proof.</b> (Proof by Contradiction.) Assume to the contrary there is a rational number p/q, in reduced form, with p not equal to zero, that satisfies the equation. Then, we have p<sup>3</sup>/q<sup>3</sup> + p/q+ 1 = 0. After multiplying each side
+      of the equation by q<sup>3</sup>, we get the equation
+
+    </p>
+    <p></p>
+    <center> p<sup>3</sup> + p q<sup>2</sup> + q<sup>3</sup> = 0</center>
+
+    <p> There are three cases to consider. (1) If p and q are both odd, then the left hand side of the above equation is odd. But zero is not odd, which leaves us with a contradiction. (2) If p is even and q is odd, then the left hand side is odd, again a
+      contradiction. (3) If p is odd and q is even, we get the same contradiction. The fourth case--p even and q even--is not posssible because we assumed that p/q is in reduced form. This completes the proof.
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2> The Converse of a Theorem</h2> The <b>Converse</b> of "If P, Then Q" is the assertion "If Q, Then P". For example, the converse of "If it is my car, it's red" is "If the car is red, then its mine." It should be clear from this example that there is no guarantee that the converse
+    of a true stement is true.
+
+    <p> Proof by Contradiction is often the most natural way to prove the converse of an already proved theorem.
+
+    </p>
+    <h2>The Converse of the Pythagorean Theorem</h2> The Pythagorean Theorem tells us that in a right triangle, there is a simple relation between the two leg lengths (a and b) and the hypotenuse length, c, of a right triangle: a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>. Perhaps you don't know that
+    the converse is also true.
+
+    <p><b>The Converse of the Pythagorean Theorem.</b> If the (nonzero) three side lengths of a triangle--a, b and c--satisfy the relation a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>, then the triangle is a right triangle. (Assume the Pythagorean Theorem
+      has already been proved.)
+
+    </p>
+    <p><b>Proof.</b> (Proof by Contradiction.) Suppose the triangle is not a right triangle. Label the vertices A, B and C as pictured. (There are two possibilites for the measure of angle C: less than 90 degrees (left picture) or greater than 90 degrees
+      (right picture).)
+
+    </p>
+    <p></p>
+    <center> <img src="./Proofs by Contradiction_files/triangleABC.gif"> </center>
+
+    <p>Erect a perpendicular line segment CD as pictured below.
+
+    </p>
+    <p></p>
+    <center> <img src="./Proofs by Contradiction_files/modified.triangleABC.gif"> </center>
+
+    <p>By the Pythagorean Theorem, BD<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>, and so BD = c. Thus we have isosceles triangles ACD and ABD. It follows that we have congruent angles CDA = CAD and BDA = DAB. But this contradicts the apparent
+      inequalities (see picture) BDA &lt; CDA = CAD &lt; DAB (left picture) or DAB &lt; CAD = CDA &lt; BDA (right picture).
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2>
+Exercises</h2> Use the method of Proof by Contradiction to prove each of the following.
+    <ol>
+      <p></p>
+      <li> The cube root of 2 is irrational.
+
+
+        <p></p>
+      </li>
+      <li> There are no positive integer solutions to the diophantine equation x<sup>2</sup> - y<sup>2</sup> = 10.
+
+        <p></p>
+      </li>
+      <li> There is no rational number solution to the equation x<sup>5</sup> + x<sup>4</sup> + x<sup>3</sup>+x<sup>2</sup>+ 1 = 0.
+
+        <p></p>
+      </li>
+      <li> If a is a rational number and b is an irrational number, then a+b is an irrational number.
+      </li>
+      <ol>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,87 @@
+\documentclass[9pt, a4paper, oneside, reqno]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 12}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Infinite series}
+\begin{questions}
+
+	\item 		In this problem $ a_n \ge 0$.
+	\begin{enumerate}
+		\item Show that if there is a number $ c < 1$, and an integer $ N$ such that $ a_n < c^n$ for all $ n > N$, then $ \sum \limits_{n=0}^\infty a_n$ converges.
+		\item Show that if there is a number $ c > 1$, and an integer $ N$ such that $ a_n > c^n$ for all $ n > N$, then $ \sum \limits_{n=0}^\infty a_n$ diverges.
+		\item Show that if $ \lim \limits_{n\rightarrow \infty} \sqrt[n]{a_n} = r $ then,
+		      \begin{quote}
+			      if $ r < 1$ then $ \sum \limits_{n=0}^\infty a_n$ converges and if $ r> 1$ then $ \sum \limits_{n=0}^\infty a_n$ diverges.
+		      \end{quote} This is called the \textbf{root test}.
+		\item Find examples of positive $ a_n$ and $ b_n$ with $ \lim \limits_{n\rightarrow \infty} \sqrt[n]{a_n} = 1 = \lim \limits_{n\rightarrow \infty} \sqrt[n]{b_n}$ such that $\sum \limits_{n=0}^\infty a_n$ converges and $\sum \limits_{n=0}^\infty b_n$ diverges.
+		\item This part is surprising difficult to make rigorous, you can give an approximate proof instead.
+
+		      Show that if $ \lim \limits_{n\rightarrow \infty} \dfrac{a_n}{a_{n-1}} = r$ then $ \lim \limits_{n\rightarrow \infty} \sqrt[n]{a_n} = r $.
+
+		      (And hence, in theory, the root test is stronger than the ratio test, in practice though the ratio test is easier to use.)
+	\end{enumerate}
+
+	\item Q.1 of Ch.23 on Pages 482-484. Note that there are \textbf{20} (small) problems in this question.
+\end{questions}
+
+\newpage
+\section*{Part 2 - Absolute convergence}
+\begin{questions}[resume]
+	\item Let $ {a_n}$ be a decreasing sequence with $ a_n > 0$. Define
+	\begin{align*}
+		s_n & = a_1 - a_2 + a_3 - a_4 + \cdots + (-1)^{n-1}a_n
+	\end{align*}
+	\begin{enumerate}
+		\item Show that the sequence $ b_n = s_{2n}$ is an increasing sequence.
+		\item Show that $ a_1 > b_n$ for all $ n$, hence conclude that $ b_n$ converges.
+		\item Show that the sequence $ c_n = s_{2n-1}$ is a decreasing sequence.
+		\item Show that $ 0 < c_n$ for all $ n$, hence conclude that $ c_n $ converges.
+		\item Show that if $ \lim \limits_{n \rightarrow \infty} a_n = 0$ then $$ \lim \limits_{n \rightarrow \infty} b_n = \lim \limits_{n \rightarrow \infty} s_n = \lim \limits_{n \rightarrow \infty} c_n$$
+		      (It's ok to give an approximate argument for this last part.)
+	\end{enumerate}
+
+	\item This question is a freebie.
+
+	The theorems from this chapter are extremely important, but the proofs are a bit convoluted and it is too late in the semester to spend significant time on them, if you have time you should read their proofs and understand the discussions in the book.
+
+	For this problem simply write down the statements of Theorems from 5 to 9.
+\end{questions}
+
+
+\newpage
+\section*{Part 3 - Integral Computations}
+Last problem set on Integrals!
+\begin{questions}[resume]
+	\item For this week do Q.7 i)-ix) on Pg.381 and Q.11 problems - i), ii) on Pg.383.
+
+\end{questions}
+
+
+\end{document}

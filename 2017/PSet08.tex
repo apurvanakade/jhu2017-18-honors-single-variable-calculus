@@ -1,0 +1,137 @@
+\documentclass[9pt, a4paper, oneside]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 08}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Fundamental Theorem of Calculus}
+\begin{questions}
+	\item  Compute $ F'(x)$ for the following functions\hint{Don't forget the chain rule!}
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ \int \limits_ a ^{x^3} \sin^3 t dt$
+			\item $ \int \limits_ x ^{b} \dfrac{1}{1 + t^2 + \sin^2 t} dt$
+			\item $ \int \limits_ a ^{b} \dfrac{x}{1 + t^2 + \sin^2 t} dt$
+			\item $ \int \limits_ a ^{x} \left( \int \limits_ b ^{y} \dfrac{1}{1 + t^2 + \sin^2 t} dt \right) dy\qquad$
+			\item $ \int \limits _ 0 ^ x \dfrac{1}{1+t^2} dt + \int \limits _ 0 ^ {1/x} \dfrac{1}{1+t^2} dt$
+			\item $ \int \limits _ {-\cos x}^ {\sin x} \dfrac{1}{\sqrt{1 - t^2}} dt $
+		\end{enumerate}
+	\end{multicols}
+
+	\item Find $ (f^{-1})'(0)$ if
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ f(x) = \int \limits _ 0 ^ x 1 + \sin (\sin t) dt$
+			\item $ f(x) = \int \limits _ 1 ^ x \cos (\cos t) dt$
+		\end{enumerate}
+	\end{multicols}
+
+	\item Suppose $ f$ is differentiable with $ f(0) = 0$ and $ 0 < f'(x) \le 1$. Show that for all $ x \ge 0$
+	\begin{align*}
+		\int _0 ^ x f^3 \le \left ( \int_0^x f\right)^2
+	\end{align*}
+
+	\item \begin{enumerate}
+	\item Find $ F'(x)$ if $ \quad F(x) = \int \limits_0^x x.f(t) dt \qquad$(Be careful: it's not $ x.f(x)$).
+	\item Prove that\hint{Differentiate both sides with respect to $ x$.}
+	\begin{align*}
+		\int _0^x f(t)(x - t) dt & = \int_0^x \left(\int_0^u f(t) dt\right) du
+	\end{align*}
+	\item Prove that
+	\begin{align*}
+		\int _0^x f(t)(x - t)^2 dt & = 2\int_0^x \left(\int_0^{u_1} \left(\int_0^{u_2} f(t) dt\right) du_2\right) du_1
+	\end{align*}
+	\end{enumerate}
+
+	\item
+	\begin{enumerate}
+		\item Suppose $ G'(x)=g(x)$ and $ F'(x)=f(x)$. Prove that the function $ y(x)$ satisfies the differential equation (\emph{a separable differential equation}) $$ g(y).y' = f(x)$$ for all $ x$ in some interval, if and only if there is a number $ c$ such that $$ G(y) = F(x) + c$$
+		\item `Solve' the following differential equations
+		      \begin{multicols}{2}
+		      	\begin{enumerate}
+		      		\item $ y' = \dfrac{1 + x^2}{1+y}$
+		      		\item $ y' = \dfrac{-1}{1+5y^4}$
+		      	\end{enumerate}
+		      \end{multicols}
+	\end{enumerate}
+\end{questions}
+
+
+
+
+
+
+
+
+\newpage
+\section*{Part 2 - Improper Integrals}
+\begin{questions}[resume]
+	\item The limit $ \lim \limits_{x \rightarrow \infty} \int \limits_{a}^x f$, if it exists, is denoted by $\int \limits_{a}^ \infty f $ and called an `improper integral'. Similarly for the improper integral $\int \limits_{-\infty}^ a f $.
+	\begin{enumerate}
+		\item Find $\int \limits_{1}^\infty t^r dt$, when $ r < -1$.
+		\item Using $\int \limits_{1}^a t^{-1} \: dt + \int \limits_{1}^b t^{-1}  \: dt = \int \limits_{1}^{ab} t^{-1}  \: dt $, show that $\int \limits_{1}^\infty t^{-1}  \: dt$ does not exist. \hint{What can you say about $\int \limits_{1}^{2^n} t^{-1}  \: dt$?}
+	\end{enumerate}
+
+	\item Assume the following the statement:
+	\begin{quote}
+		Suppose that $ f(x) \ge 0$ for $ x \ge 0$ and that $\int \limits_{a}^ \infty f $ exists. If $ 0 \le g(x) \le f(x)$ for all $ x \ge 0$ and $ g$ is integrable on the interval $ [0,N]$ for all $ N > 0$ then $\int \limits_{0}^ \infty g $ exists.
+	\end{quote}
+	\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+	\begin{itemize}
+		\item (Optional) Prove the above statement.
+		\item For which of the following functions does the integral $\int \limits_{0}^ \infty f $ exist?\hint{You might have to break $ [0,\infty)$ into multiple intervals and analyze each interval separately.}
+			      \begin{multicols}{2}
+			      	\begin{enumerate}
+			      		\item $ \dfrac{1}{1+x^2}$
+			      		\item $ \dfrac{1}{\sqrt{1+x^{3}}}$
+			      		\item $ \dfrac{x}{{1+x^{3/2}}}$
+			      		\item $ \dfrac{1}{\sqrt{1+x}}$
+			      	\end{enumerate}
+			      \end{multicols}
+		\end{itemize}
+
+		\item The improper integral $\int \limits_{-\infty}^ {\infty} f $ is defined as $\int \limits_{-\infty}^ 0 f + \int \limits_{0}^ \infty f $ if both the integrals exist.
+		\begin{enumerate}
+			\item Show that $ \int \limits_{-\infty}^ {\infty} \dfrac{1}{1+x^2} dx$ exists.
+			\item Determine the limit $ \lim \limits_{N \rightarrow \infty} \int \limits_{-N}^ {N} x \: dx$.
+			\item Show that $ \int \limits_{-\infty}^ {\infty} x \: dx$ does not exist.
+		\end{enumerate}
+
+		\item It is possible to have another kind of improper integral, one where the function itself is unbounded but the limits are finite.
+
+		For $ -1 < r < 0$ draw the graph of $ x^r $ and determine $ \lim \limits_{\epsilon \rightarrow 0^+} \int \limits_\epsilon^a x^r dx$. \\(This limit is written as $\int \limits_0^a x^r dx$.)
+	\end{questions}
+
+
+
+
+
+
+
+
+\end{document}

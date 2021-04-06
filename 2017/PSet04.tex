@@ -1,0 +1,170 @@
+\documentclass[9pt, a4paper, oneside]{amsart}
+
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 04}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Limits and Continuity}
+\begin{questions}
+	\item Proofs are not required for this problem. Describe your answers as precisely as possible and provide some explanation.
+
+	\begin{enumerate}
+		\item Find a function which is discontinuous at $1, \frac{1}{2}, \frac{1}{3},\frac{1}{4}, \ldots$ but continuous at all other points.
+		\item Find a function which is discontinuous at $1, \frac{1}{2}, \frac{1}{3},\frac{1}{4}, \ldots$ and 0 but continuous at all other points.
+	\end{enumerate}
+	% If $ \lim \limits _ {x \rightarrow a} f(x)$ exists but is $ \neq f(a)$ then $ f$ is said to have a \textbf{removable singularity} at $ a$.
+	% \begin{enumerate}[resume]
+	% 	\item Give an example of a function $ f$ with a removable discontinuity at 0.
+	% 	\item Given an example of a function $ f$ with a discontinuity at 0	which is not removable.
+	% \end{enumerate}
+
+	\item For a non-empty set $ A$ let $ -A$ denote the set of all $ -x$ for $ x$ in $ A$.
+	\begin{enumerate}
+		\item Prove that if $ x$ is a lower bound of $ A$ then $ -x$ is an upper bound of $ -A$.
+		\item Prove that if $ x$ is the greatest lower bound of $ A$ then $ -x$ is the lowest upper bound of $ -A$.
+		\item Similarly prove that $ \sup (-A) = - \inf A$.
+	\end{enumerate}
+
+	\item We say that a subset $ A$ of $ \mathbb{R}$ is \textbf{open} if for every number $ x$ in $A$ the interval $ (x-r,x+r)$ is a subset of $ A$ for some $ r>0$.
+	\begin{enumerate}
+		\item Determine, with proof, which of the sets $ [0,1]$, $(0,1)$, $(0,1]$, and $\mathbb{R}$ are open?
+			\item Is the empty set open?
+		\end{enumerate}
+		For a set $ A$ and a function $ f: \mathbb{R} \rightarrow \mathbb{R}$	define $ f^{-1}(A)$ to be the set of real numbers $ x$ which are mapped to $ A$ by $ f$. The following is a very fundamental theorem about continuity, we'll verify it for a few functions.
+		\begin{quote}
+			\textbf{Theorem.} $ f$ is continuous iff $ f^{-1}(A)$ is open for every open set $ A$.
+		\end{quote}
+		\begin{enumerate}[resume]
+			\item For the function $ f(x) = x^2$ find the set $ f^{-1}(A)$ when $ A$ is one of the following sets: $ (0,1)$, $ (-1,0)$, $ (-1,1)$, $ \mathbb{R}$, and the empty set.
+			\item For $ f(x) = x^2$ find a set $ A$ such that $ A$ is not open but $ f^{-1}(A)$ is open. How does this not contradict the \textbf{Theorem}?
+			\item For the function
+			      \begin{align*}
+			      	g(x) = \begin{cases} 1 & \mbox{ if } x \ge 0 \\ 0 &\mbox{ otherwise }\end{cases}
+			      \end{align*}
+			      Find a set $ A$ such that $ A$ is open but $g^{-1}(A)$ is not open.
+			\item For the function
+			      \begin{align*}
+			      	h(x) = \begin{cases} 1/x & \mbox{ if $x \neq 0$} \\ 1 &\mbox{ if $x = 0$} \end{cases}
+			      \end{align*}
+			      Find a set $ A$ such that $ A$ is open but $h^{-1}(A)$ is not open.
+			\item (Optional) Prove the \textbf{Theorem}. The proof is easy but requires you to reason \emph{very} precisely. It is good exercise to do if you have time.
+		\end{enumerate}
+
+	\end{questions}
+
+
+
+
+
+
+
+
+
+	\section*{Part 2 - Differentiation}
+	\begin{questions}[resume]
+		\item
+		\begin{enumerate}
+			\item Using the definition prove that if $ f(x)=1/x$ then $ f'(a) = -1/a^2$ for $ a \neq 0$.
+			\item Prove that the tangent line to the graph of $ f$ at $ (a,f(a))$ does not intersect the graph of $ f$ at any other point.
+		\end{enumerate}
+
+		\item
+		\begin{enumerate}
+			\item Using the definition prove that if $ f(x)=1/x^2$ then $ f'(a) = -2/a^3$ for $ a \neq 0$.
+			\item Prove that the tangent line to the graph of $ f$ at $ (a,f(a))$ intersects the graph of $ f$ at one other point.
+		\end{enumerate}
+
+
+		\item Suppose the function $ f$ is differentiable at $ a$ and let $ c , d \neq 0$ be constants. Determine in terms of $ f'(a)$ the following limits.
+		\begin{enumerate}
+			\item \begin{align*}
+			      \lim \limits_{h \rightarrow 0} \dfrac{f(a+ch) - f(a)}{h}
+			\end{align*}
+			\item \begin{align*}
+			      \lim \limits_{h \rightarrow 0} \dfrac{f(a+ch) - f(a+dh)}{h}
+			\end{align*}
+		\end{enumerate}
+
+
+
+
+		\item
+		A function $ f: \mathbb{R} \rightarrow \mathbb{R}$ is said to be \textbf{even} if $ f(-x) = f(x)$ for all $ x$. $ f$ is said to be an \textbf{odd} function if $ f(-x) = -f(x)$ for all $ x$.
+		\begin{enumerate}
+			\item Show that if $ f$ is an even function then $ f'(-a) = -f'(a)$.
+			      (Draw a picture.)
+			\item Show that if $ f$ is an odd function then $ f'(-a) = f'(a)$.
+			      (Draw a picture.)
+		\end{enumerate}
+
+		\item Suppose that $ f(x) \le g(x) \le h(x)$ for all $ x$ and that $ \lim \limits_{x \rightarrow a} f(x) = L = \lim \limits_{x \rightarrow a} h(x)$. Prove that $ \lim \limits_{x \rightarrow a} g(x) = L$. (This is usually called the \textbf{Squeeze theorem}.)
+
+		\item
+		\begin{enumerate}
+			\item Suppose that $ f(a) = g(a) = h(a)$, and that $ f(x) \le g(x) \le h(x)$ for all $ x$ and that $ f'(a) = h'(a)$. Prove that $ g$ is differentiable at $ a$, and that $ f'(a) = g'(a) = h'(a)$.
+
+			\item Show that the conclusion does not follow if we omit the hypothesis $ f(a) = g(a) = h(a)$.
+		\end{enumerate}
+
+	\end{questions}
+
+
+	\newpage
+	\section*{Part 3 - Differentiation}
+	\begin{questions}[resume]
+
+		\item Using the definition find $ f'(a)$ for $ f(x) = \sqrt{x}$ and $ x > 0$.
+
+		\item Find $ f'(x)$ if $ f(x) = |x|^3$. Find $ f''(x)$. Does $ f'''(x)$ exist for all $ x$?
+
+		\item
+		\begin{enumerate}
+			\item Prove that the following function is differentiable at $ 0$.
+			      \begin{align*}
+			      	f(x) = \begin{cases}
+			      	x^2 & \mbox{ if $ x$ is rational} \\
+			      	0   & \mbox{ otherwise }
+			      	\end{cases}
+			      \end{align*}
+
+			\item More generally prove that if a function $ f(x)$ satisfies $ |f(x)| < x^2$  then $ f(x) $ is differentiable at $ 0$.
+		\end{enumerate}
+
+		\item Suppose that $ f(a) = g(a)$ and that the left-hand derivative of $ f$ at $ a$ equals the right hand derivative of $ g$ at $ a$. Define \begin{align*}
+		h(x) = \begin{cases}
+		f(x) & \mbox{ if $ x \le a$} \\
+		g(x) & \mbox{ if $ x > a$}
+		\end{cases}
+		\end{align*}
+		Prove that $ h$ is differentiable at $ a$.
+
+
+
+	\end{questions}
+
+
+
+
+
+
+
+
+\end{document}

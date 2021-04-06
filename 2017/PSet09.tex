@@ -1,0 +1,162 @@
+\documentclass[9pt, a4paper, oneside, reqno]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 09}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Trigonometric functions}
+You should probably make a table of trig identities before you start this problem sheet.
+\begin{questions}
+	% \item Using the addition formulae for $ \sin$ and $ \cos$ prove that
+	% \begin{enumerate}
+	% 	\item $ \tan(x + y) = \dfrac{\tan x + \tan y}{1 - \tan x \tan y}$
+	% 	\item $ \mathrm{arctan}x + \mathrm{arctan}y = \mathrm{arctan}\left(\dfrac{x + y}{1 - x y}\right)$
+	% \end{enumerate}
+
+	% \item If $ u = \tan (x/2)$ express $ \sin x$ and $ \cos x$ in terms of $ u$.
+
+	\item
+	\begin{enumerate}
+		\item Using the angle sum formula for $ \sin$ and $ \cos$ prove that for $ m, n > 0$  integers
+		      \begin{align*}
+		      	\int \limits _ {-\pi}^\pi  \sin mx \sin nx \: dx
+		      	=
+		      	\int \limits _ {-\pi}^\pi  \cos mx \cos nx \:dx
+		      	& =
+		      	\begin{cases} 0 & m \neq n \\ \pi & m = n\end{cases} \\
+		      	\int \limits _ {-\pi}^\pi  \sin mx \cos nx \:dx
+		      	& = 0
+		      \end{align*}
+		\item Show that the minimum value of \begin{align*}
+		      g(a) = \int \limits _ {-\pi}^\pi  (f(x) - a \cos nx)^2\: dx
+		\end{align*}
+		occurs when $ a = \dfrac{1}{\pi}\int \limits _ {-\pi}^\pi  f(x) \cos nx\: dx$.
+		\item Repeat part (2) for $g(a) = \int \limits _ {-\pi}^\pi  (f(x) - a \sin mx)^2 \: dx$.
+	\end{enumerate}
+
+	\item
+	\begin{enumerate}
+		\item Prove the following identities\hint{Use the identity $ \sin(k + 1/2)x - \sin(k - 1/2)x = 2 sin(x/2)\cos(kx)$}
+		      \begin{align*}
+		      	1/2 + \cos x + \cos 2x + \cdots + \cos nx
+		      	  & = \dfrac{\sin \left(n + \dfrac{1}{2}\right)x}{2 \sin {(x/2)}}
+		      \end{align*}
+		\item Use these to find $ \int \limits_{0}^{a} \cos x \: dx$ (for $ a \in [0,\pi / 2]$) directly from the definition of integral.
+
+	\end{enumerate}
+	\item
+	\begin{enumerate}
+		\item Show that $ \lim \limits_{\lambda \rightarrow \infty} \int \limits_a^b \sin \lambda x \: dx = 0$. What does this mean geometrically?
+		\item Show that if $ s$ is a step function then $ \lim \limits_{\lambda \rightarrow \infty} \int \limits_a^b s(x) \sin \lambda x \: dx = 0$.
+		\item Using Q.7 from Problem Set 07 show that if $ f$ is an integrable function then $$ \lim \limits_{\lambda \rightarrow \infty} \int \limits_a^b f(x) \sin \lambda x \: dx = 0$$ This theorem is called the \textbf{Riemann Lebesgue lemma}.
+	\end{enumerate}
+
+\end{questions}
+These trig identities (and many more) naturally show up while studying Fourier series.
+
+
+
+
+
+
+
+\newpage
+\section*{Part 2 - Logarithms and exponentials}
+\begin{questions}[resume]
+	\item Use the identity $ (\log f)' = f' / f$ to find $ f'$ for the following functions. This trick is sometimes called \textbf{logarithmic differentiation}.
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ f(x) = \dfrac{(3-x)^{1/3}x^2}{(1-x)(3+x)^{2/3}}$
+			\item $ f(x) = (\sin x)^{\cos x} + (\cos x)^{\sin x}$
+		\end{enumerate}
+	\end{multicols}
+
+	\item The \textbf{hyperbolic} functions are defined as
+	\begin{align*}
+		\sinh x := \dfrac{e^x - e^{-x}}{2} &   & \cosh x := \dfrac{e^x + e^{-x}}{2}
+	\end{align*}
+	\begin{enumerate}
+		\item Simplify each of the following:
+		      \begin{align*}
+		      	  & \cosh^2 x - \sinh^2 x,                \\
+		      	  & \sinh'x,
+		      	\quad \cosh'x,                                     \\
+		      	  & \sinh x .\cosh y +  \sinh y. \cosh x, \\
+		      	  & \cosh x .\cosh y + \sinh x. \sinh y.
+		      \end{align*}
+		\item Determine $ (\sinh^{-1})'x$, $ (\cosh^{-1})'x$.
+		\item Find an explicit formula for $ \sinh^{-1} x$ and $ \cosh^{-1} x$.\hint{Substitute $ y = e^{x}$ in the right hand side of $\sinh x = \dfrac{e^x - e^{-x}}{2}$.}
+		\item Compute $ \int \limits_a^b \dfrac{1}{\sqrt{x^2+1}} \: dx$ and $ \int \limits_a^b \dfrac{1}{\sqrt{x^2-1}} \: dx$.
+	\end{enumerate}
+	\item
+	\begin{enumerate}
+		\item Prove that if $ r$ is a root of the polynomial equation
+		      \begin{align}
+		      	\label{eq:first}
+		      	a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 = 0
+		      \end{align}
+		      then the function $ y(x) = e^{rx}$ satisfies the differential equation
+		      \begin{align}
+		      	\label{eq:second}
+		      	a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y= 0
+		      \end{align}
+		\item Prove that if $ r$ is a double root of the polynomial equation \eqref{eq:first} then $ y=x.e^{rx}$ is also a solution of the differential equation \eqref{eq:second}.\hint{Recall that if $ r$ is a double root of a polynomial $f(x)$ then $ r$ is also a root of $ f'(x)$.}
+		\item Prove that if $ y_1$ and $ y_2$ satisfy $ \eqref{eq:second}$ then so does $ c_1 y_1 + c_2 y_2$ where $ c_1, c_2$ are arbitrary real numbers.
+		\item Find  solutions of the differential equation $ y''' - y' = 0$. (Be careful!)
+	\end{enumerate}
+	The differential equation \eqref{eq:second} is called a \textbf{constant coefficient linear differential equation} and this is the standard way to solve it.
+	\item
+	\begin{enumerate}
+		\item Sketch the graph of $ \dfrac{\log x}{x}$ for $ x > 0$.
+		\item Determine, with proof, which one is larger: $ e^ \pi$ or $ \pi^e$?
+	\end{enumerate}
+	\item  Find the following limits:
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $\lim \limits_{x \rightarrow 0}\dfrac{\log(1+ax)}{x}$
+			\item $\lim \limits_{x \rightarrow \infty}x.{\log(1+a/x)} $
+			\item $\lim \limits_{x \rightarrow \infty}(1+1/x)^x$
+			\item $\lim \limits_{x \rightarrow \infty}(1+a/x)^x$
+		\end{enumerate}
+	\end{multicols}
+\end{questions}
+
+
+
+
+\newpage
+\section*{Part 3 - Computations}
+From now on the Friday HWs will be about computing integrals. I'll usually assign the problems from the book.
+\begin{questions}[resume]
+	\item For this week do Q.1 and Q.2 on Pg. 377-378 from Ch.19. \\
+	These might look like a lot of problems but they all have very short solutions, usually one trick will give you the answer.
+\end{questions}
+
+
+
+\end{document}

@@ -1,0 +1,150 @@
+\documentclass[9pt, a4paper, oneside, reqno]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 13}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Nowhere Differentiable Function}
+In this problem set we'll construct a function $ f_\infty(x)$ which is continuous everywhere but differentiable nowhere(!) using only the techniques you've learnt in this course.
+
+
+\begin{questions}
+	\item
+	Define the function $ \{ x \}$ as
+	\begin{align*}
+		\{x \} & = \mbox{the distance of $x$ from the nearest integer }
+	\end{align*}
+	Let $ n$ denote a positive integer. Define the function
+	\begin{align*}
+		f_n(x)
+		 & =  \{x\} + \dfrac{\{ 2 x\}}{2} + \dots + \dfrac{\{ 2^n x\}}{2^{n}} \\
+		 & = \sum \limits_{i=0}^{n} \dfrac{\{ 2^i x\}}{2^{i}}
+	\end{align*}
+ Draw the graph of the functions $ \{x\}$, $ \dfrac{\{ 2 x\}}{2}$, $ \dfrac{\{ 2^n x\}}{2^{n}}$, and $ f_1(x)$.
+
+
+	\item Let $ x \in [0,1]$. Determine the relation between
+	\begin{enumerate}
+		\item $ \{x\}$ and $ \{x+1\}$
+		\item $ \{x\}$ and $ \{1-x\}$
+		\item $ \{x\}$ and $ \{x+1/2 \}$
+		\item $ \{x\}$ and $ \{2x\}$
+	\end{enumerate}
+
+	\item Using properties of continuous functions argue that $ \{ x \}$ is a continuous function, and hence so is $ f_n(x)$.
+
+	\item What are the points at which $ f_n(x)$ is not differentiable? Assuming that it makes sense to take limits of functions, what do you think are the points at which the function $ \lim \limits_{n\rightarrow \infty}f_n(x)$ is not differentiable. (Proof not needed.)
+
+	\item Using your favorite test for series convergence, show that for every real number $ x$ the series $\sum \limits_{i=0}^{\infty} \dfrac{\{ 2^i x\}}{2^{i}}$ converges.
+\end{questions}
+
+Hence we can \textbf{define} a new function
+\begin{align*}
+	f_\infty(x) & = \sum \limits_{i=0}^{\infty} \dfrac{\{ 2^i x\}}{2^{i}}
+\end{align*}
+\begin{questions}[resume]
+	\item Show that $ |f_\infty(x) - f_n(x)| \le 2^{-n}$ for all $ x$.
+
+	\item Using the triangle inequality
+	\begin{align*}
+		|f_\infty(x) - f_\infty(a)|
+		 & \le |f_\infty(x) - f_n(x)|              \\
+		 & \qquad + |f_n(x) - f_n(a)|              \\
+		 & \qquad  \qquad + |f_n(a) - f_\infty(a)|
+	\end{align*}
+	and the $ \epsilon-\delta$ definition of continuity, prove that $ f_\infty(x)$ is a continuous function.
+\end{questions}
+In order to show that $ f_\infty(x)$ is not differentiable anywhere it's helpful to use binary expansions of numbers.
+
+Let $ x$ be a real number with binary expansion $ x = m + 0.a_1 a_2 a_3 \dots$ where $ m$ is an integer and each $ a_i = 0$ or $ 1$.
+\begin{questions}[resume]
+	\item Show that the number whose binary expansion consists of all one's $ 0.111 \dots 1 \dots $ is equal to 1.\hint{This is a geometric series.} What is the corresponding statement for decimal expansions?
+
+	Because of this we can assume that there are no \emph{trailing 1's} in the binary expansion of any number.
+
+	\item
+	\begin{enumerate}
+		\item Find $ \{ x \}$ in terms of the binary expansion of $ x$.
+		\item Find $ \dfrac{\{ 2^i x\}}{2^{i}}$ in terms of the binary expansion of $ x$.
+		\item If $ x$ has a finite binary expansion $ x = m + 0.a_1 a_2 \cdots a_n$, what is $ f_\infty(x)$?
+	\end{enumerate}
+\end{questions}
+
+Let $ b_n$ be the position of the $ n^{th}$ zero after the decimal point in the binary expansion of $ x$.
+	For example,
+	\begin{quote}
+		{if $ x = 1011.1010101\dots$ then $ b_n =2n$,}\\
+	{if $ x = 0.1011011011\dots$ then $ b_n =3n-1$, etc.}
+\end{quote}
+\begin{questions}[resume]
+	\item
+	\begin{enumerate}
+		\item Show that
+		\begin{align*}
+			\dfrac{\{ 2^i(x + 2^{-b_n})\}}{2^{i}} - \dfrac{\{ 2^i x\}}{2^{i}}
+			&=
+			\begin{cases}
+				-2^{-b_n} & \mbox { if }i < b_n - 1 \\
+				0 & \mbox { if }i \ge b_n
+			\end{cases}
+		\end{align*}
+		\item Show that $ \dfrac{f_\infty(x + 2^{-b_n}) - f_\infty(x)}{2^{-b_n}} < -(b_n - 1) + 2^{-b_n+1}$.
+	\end{enumerate}
+	\item Show that $ \lim \limits_{n \rightarrow \infty} \dfrac{f_\infty(x + 2^{-b_n}) - f_\infty(x)}{2^{-b_n}}$ does not exist. Conclude that $ f(x)$ is not differentiable at $ x$.
+\end{questions}
+
+
+
+
+
+\newpage
+\section*{Part 2 - Trigonometry and Complex Numbers}{
+	Complex numbers are numbers of the form $ a+i.b$ where $ a,b$ are real numbers and $ i^2 = -1$. Complex numbers are very useful in calculus, especially for finding integrals, because of the following \textbf{Euler's identity}
+	\begin{align*}
+		e^{i \theta} = \cos \theta + i \sin \theta
+	\end{align*}
+}
+\begin{questions}[resume]
+	\item Verify Euler's identity using the Taylor series for $ e^x$, $ \sin x$ and $ \cos x$.
+	\item Using the fact that $ e^{i(a+b)} = e^{ia}.e^{ib}$ compute the formulae for  $ \sin(a+b)$, $ \cos(a+b)$, $ \sin 2x$, $ \cos 2x$, $ \sin 3x$, and $ \cos 3x$.
+	\item Show that
+	\begin{align*}
+		\cos x = \dfrac{e^{ix} + e^{-ix}}{2} &  & \sin x = \dfrac{e^{ix} - e^{-ix}}{2i}
+	\end{align*}
+	(Compare these with the formulae for $ \sinh x$ and $ \cosh x$.)
+	\item Use these formulae to compute the following integrals\hint{You might need to use the identity $ \dfrac{1}{a+ib} = \dfrac{a-ib}{a^2 + b^2}$}
+	\begin{enumerate}
+		\item $ e^{ax} \sin bx$
+		\item $ e^{ax} \cos bx$
+		\item $ \cos^2 x$
+		\item $ \sin x \cos 4x$
+	\end{enumerate}
+\end{questions}
+
+
+\end{document}

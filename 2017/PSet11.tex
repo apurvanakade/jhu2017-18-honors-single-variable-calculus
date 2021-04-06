@@ -1,0 +1,117 @@
+\documentclass[9pt, a4paper, oneside, reqno]{amsart}
+
+\usepackage[final]{pdfpages}
+\usepackage{wrapfig}
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+\newcommand{\hint}[1]{\footnote{\raggedleft\rotatebox{180}{Hint: #1\hfill}}}
+
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 11}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Sequences}
+Q.1. and Q.3. are basically proofs from the book, if you get stuck you should consult them.
+\begin{questions}
+	\item
+	\begin{enumerate}
+		\item Let $ a_n$ be a sequence such that $ a_n \neq c$, for any $ n$, and $ \lim \limits_{n \rightarrow \infty} a_n = c$. Using the definition, show that if $ \lim \limits_{x \rightarrow c}f(x) = l$ then $ \lim \limits_{n \rightarrow \infty}f(a_n) = l$.
+		\item Write down the definitions of $ \lim \limits_{x \rightarrow c}f(x) \not = l$ and $ \lim \limits_{n \rightarrow \infty}a_n \neq k$.
+		\item Show that if $ \lim \limits_{x \rightarrow c}f(x) \not = l$ then there is a sequence $ a_n$ such that $ \lim \limits_{n \rightarrow \infty} a_n = c$ and $ \lim \limits_{n \rightarrow \infty}f(a_n) \neq l$.
+		\item Come up with a definition for $ \lim \limits_{n\rightarrow \infty} a_n = \infty$. Let $ a_n$ be a sequence such that $ \lim \limits_{n \rightarrow \infty} a_n = \infty$. Show that if $ \lim \limits_{x \rightarrow \infty} f(x) = l$ then $ \lim \limits_{n \rightarrow \infty}f(a_n) = l$.
+	\end{enumerate}
+
+
+	\item Do problem 1 (i - ix) and 2 from the book on Pg. 453-454. There are a lot of problems but as before all of them are very short and require a very small argument.
+
+	You do not have to be very rigorous for these problems, for most (but not all) problems you can use the part (4) of Q.1.
+
+
+	\item
+	\begin{enumerate}
+		\item Find a sequence $ a_n$ such that $ a_n$ is bounded from both above and below but $ \lim \limits_{n \rightarrow \infty} a_n$ does not exist. No proof needed, draw a picture.
+		\item Let $ a_n$ be a non-increasing sequence bounded below. Let $ A = \{ a_n \} $.
+		      \begin{enumerate}
+		      	\item Argue that $ \inf A$ exists.
+		      	\item Show that $ \lim \limits_{n \rightarrow \infty} a_n = \inf A$.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\item
+	\begin{enumerate}
+		\item Prove that if $ 0 < a < 2$ then $ a < \sqrt{2a} < 2$.
+		\item Prove that the sequence
+		      \begin{align*}
+		      	\sqrt{2}, \sqrt{2\sqrt{2}}, \sqrt{2\sqrt{2\sqrt{2}}}, \cdots
+		      \end{align*}
+		      converges using Theorem 2.
+		\item Find the limit.
+	\end{enumerate}
+
+	\item Let $ 0 < a_1 < b_1$ and define
+	\begin{align*}
+		a_{n+1} = \sqrt{a_n b_n} \mbox{ and } b_{n+1} = \dfrac{a_n + b_n}{2}
+	\end{align*}
+	\begin{enumerate}
+		\item Use Theorem 2 to show that the sequence $ a_n$ and $ b_n$
+		      converge.
+		\item Show that they converge to the same limit.
+	\end{enumerate}
+\end{questions}
+
+\newpage
+\section*{Part 2 - Sequences continued}
+\begin{questions}[resume]
+	\iffalse
+	\item Prove directly using the definition of Cauchy sequence, that if $ a_n$ is a non-decreasing sequence bounded from above then $ a_n$ is a Cauchy sequence.\hint{Estimate $ a_n - a_m$ using $ \sup \{ a_n \}$.}
+	\item Q.9 from Ch.22 on Pg.455.
+	\fi
+	\item
+	\begin{enumerate}
+		\item Using integrals show that
+		      \begin{align*}
+		      	\dfrac{1}{n+1} < \log(n+1) - \log(n) < \dfrac{1}{n}
+		      \end{align*}
+		\item Using Theorem 2 show that the following sequence converges.
+		      \begin{align*}
+		      	a_n = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n} - \log(n)
+		      \end{align*}
+	\end{enumerate}
+
+	\item Prove that if $ \lim \limits_{n \rightarrow \infty} a_n = l$ then
+	\begin{align*}
+		\lim \limits_{n \rightarrow \infty} \dfrac{a_1 + a_2 + \cdots + a_n}{n} = l
+	\end{align*}
+
+	(Hint: As $ a_n$ converges to $ l$, for every $ \epsilon > 0$ there is some constant $ N$ such that for all $ n > N$ the inequality $ |a_n - l| < \epsilon$ holds. For $ n> N$ break $ \frac{a_1 + a_2 + \cdots + a_n}{n}$ into two fractions and show that one fraction can be made arbitrarily small and the second fraction is close to $ l$.)
+\end{questions}
+
+
+\newpage
+\section*{Part 3 - Integral Computations}
+\begin{questions}[resume]
+	\item For this week do Q.4 problems - vi) to x) and Q.5) on Pg. 379-380 from Ch.19. \\\\
+
+\end{questions}
+
+
+\end{document}

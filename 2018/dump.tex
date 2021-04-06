@@ -1,0 +1,68 @@
+
+% 	\begin{exercise}
+% 		\begin{align*}
+% 			\sqrt{1 - x^2}
+% 		\end{align*}
+% 	\end{exercise}
+
+
+
+\section*{Solutions to Selected Problems}
+
+\begin{exercise*}
+  Find
+  $\lim \limits_{x \rightarrow 0} f(x)$ where $$f(x) = \begin{cases}
+            x & \mbox{ if $x$ is rational}   \\
+            0 & \mbox{ if $x$ is irrational}
+          \end{cases}$$
+\end{exercise*}
+\begin{proof}
+  We'll prove that $\lim \limits_{x \rightarrow 0} f(x) = 0$. For this we need to show that for every $\epsilon$, there exists a $\delta$ such that for every $x$, if $0 < |x| < \delta$ then $|f(x)| < \epsilon$.
+
+  Let $\epsilon > 0$, let $\delta = \epsilon$ and let $0 < |x| < \delta$ then either $x$ is a rational number or it is an irrational number.
+
+  If $x$ is a rational number then
+  \begin{align*}
+    |f(x)| = |x| < \delta = \epsilon
+  \end{align*}
+  If $x$ is an irrational number then
+  \begin{align*}
+    |f(x)| = 0 < \epsilon
+  \end{align*}
+  which shows that $|f(x)|< \epsilon$ for all $0 < |x| < \delta$, which is what we wanted to prove.
+\end{proof}
+
+\begin{exercise*}
+  Let $
+    f(x) = \begin{cases}
+      1 & \mbox{if $x$ is rational,}   \\
+      0 & \mbox{if $x$ is irrational.}
+    \end{cases}
+  $
+  \begin{enumerate}
+    \item Prove that for every real number $L$, $\lim \limits_{x \rightarrow 0} f(x) \neq L$.
+    \item Prove that $\lim \limits_{x \rightarrow 0} f(x) \neq \infty$. (Similarly for $-\infty$.)
+  \end{enumerate}
+  Hence the limit of $f$ at $0$ does not exist.
+\end{exercise*}
+\begin{proof}
+  \begin{enumerate}
+    \item   For the first part, we need to show that for any real number $L$, there exists an $\epsilon > 0$ such that for every $\delta > 0$ there exists an $x$ such that $0 < |x| < \delta$ and $|f(x) - L | \ge \epsilon$. We'll show that this is true for $\epsilon = 1/2$.
+
+    Let $\epsilon = 1/2$, let $\delta > 0$, let $x_1$ be an irrational number satisfying $0 < |x_1| < \delta$ and let $x_2$ be a rational number satisfying $0 < |x_2 | < \delta$.
+
+    We have already shown that for any $L$ at least one of $|L|$ or $|1 - L|$ is $\ge 1/2$. Hence either \begin{align*}
+      |f(x_1) - L| \ge 1/2 \quad \mbox{ or } \quad |f(x_2) - L | \ge 1/2
+    \end{align*}
+    Thus the inequality $|f(x) - L | \ge \epsilon$ is true for either $\epsilon = x_1$ or $x_2$, which completes the proof.
+
+    \item For the second part, we need to show that there exists an $\epsilon > 0$ such that for every $\delta > 0$ there exists an $x$ such that $0 < |x| < \delta$ and $|f(x)| \le \epsilon$. We'll show that this is true for $\epsilon = 1$.
+
+    Let $\epsilon = 1$, let $\delta > 0$, let $x$ be an irrational number satisfying $0 < |x| < \delta$.
+
+    Then $|f(x)| = 0 \le 1 = \epsilon$ which is what we wanted to prove.
+
+    Similar proof works for $-\infty$.\\
+  \end{enumerate}
+  Since $\lim \limits_{x \rightarrow 0} f(x)$ does not equal any real number, $\infty$, or $-\infty$, the limit of $f$ at 0 does not exist.
+\end{proof}

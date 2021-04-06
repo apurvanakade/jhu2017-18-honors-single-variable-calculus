@@ -1,0 +1,256 @@
+%!TEX root=ClassNotes.tex
+
+\section{Proofs}
+
+We'll start by learning about the various kinds of proofs that we'll encounter in this class.\footnote{This section in taken almost verbatim from \url{http://zimmer.csufresno.edu/~larryc/proofs/proofs.html}.}
+
+Proofs are the heart of mathematics. You must come to terms with proofs -- you must be able to read, understand
+and write them. What is the secret? What magic do you need to know? The short answer is: there is no secret, no
+mystery, no magic. All that is needed is some common sense and a basic understanding of a few trusted and easy
+to understand techniques.
+
+\subsection*{The Structure of a Proof}
+The basic structure of a proof is easy: it is just a series of statements, each one being either
+\begin{itemize}
+	\item
+	An assumption or
+	\item
+	A conclusion, clearly following from an assumption or previously proved result
+\end{itemize}
+And that is all. Occasionally there will be the clarifying remark, but this is just for the reader and has no logical
+bearing on the structure of the proof.
+
+A well written proof will flow. That is, the reader should feel as though they are being taken on a ride that takes
+them directly and inevitably to the desired conclusion without any distractions about irrelevant details.
+
+Each step
+should be clear or at least clearly justified. A good proof is easy to follow.
+When you are finished with a proof, apply the above simple test to every sentence: is it clearly
+\begin{enumerate}
+	\item an assumption
+	\item a justified conclusion?
+\end{enumerate}
+If the sentence fails the test, maybe it doesn't belong in the proof.
+
+
+\subsection*{Example}
+In order to write proofs, you must be able to read proofs. See if you can follow the proof below. Don't worry
+about how you would have (or would not have) come up with the idea for the proof. Read the proof with an eye
+towards the criteria listed above. Is each sentence clearly an assumption or a conclusion? Does the proof flow?
+Was the theorem in fact proved?
+
+\begin{theorem}
+	\label{theorem:irrationality_of_sqrt2}
+	 The square root of 2 is an irrational number.
+\end{theorem}
+\begin{proof}
+	Let's represent the square root of 2 by $s$. Then, by definition, $s$ satisfies the equation
+	\begin{align*}
+		s^2 = 2.
+	\end{align*}
+	If $s$ were a rational number, then we could write $s = p/q$
+where $p$ and $q$ are a pair of integers. In fact, by dividing out the common multiple if necessary, we may even assume $p$ and $q$ have no common multiple (other than 1). If we now substitute this into the first equation we obtain, after a little algebra, the equation
+\begin{align*}
+		p^2 = 2 q^2.
+\end{align*}
+
+But now, 2 must appear in the prime factorization of the number $p^2$ (since it appears in the same number $2 q^2$). Since 2 itself is a prime number, 2 must then appear in the prime factorization of the number $p$. But then, $2 \cdot 2$ would appear in the prime factorization of $p^2$, and hence in $2 q^2$. By dividing out a 2, it then appears that 2 is in the prime factorization of $q^2$. Like before (with $p^2$) we can now conclude 2 is a prime factor of $q$. But now we have $p$ and $q$ sharing a prime factor, namely 2. This violates our assumption above (see if you can find it) that $p$ and $q$ have no common multiple other than 1.
+\end{proof}
+
+\subsection{Direct Proofs}
+Most theorems that you want to prove are either explicitly or implicitly in the form \begin{align*}
+	\mbox{ ``If \textit{P}, then \textit{Q}". }
+\end{align*} This is the standard form of a
+theorem (though it can be disguised). A direct proof should be thought of as a flow of implications beginning
+with \textit{P} and ending with \textit{Q}.
+	\begin{align*}
+		{P} \implies \dots \implies {Q}
+	\end{align*}
+Most proofs are (and should be) direct proofs. Always try direct proof first, unless you have a good reason not to. If you find a simple proof, and you are convinced of its correctness, then don't be shy about. Many times proofs
+are simple and short.
+
+\begin{exercise}
+	\label{question:ex1}
+	Prove each of the following.
+	\begin{enumerate}
+		\item If $a$ divides $b$ and $a$ divides $c$ then $a$ divides $b + c$, where $a$, $b$, and $c$ are positive integers.
+		\item For all real numbers $a$ and $b$, $a^2 + b^2 \ge 2 a b$.
+		\item If $a$ is a rational number and $b$ is a rational number, then $a+b$ is a rational number.
+	\end{enumerate}
+\end{exercise}
+
+
+
+\subsection{Proof by Contradiction}
+\label{section:proofByContradiction}
+In a proof by contradiction we assume, along with the hypotheses, the logical negation of the result we wish to
+prove, and then reach some kind of contradiction. That is, if we want to prove ``If \textit{P}, then \textit{Q}'', we assume \textit{P} and
+Not \textit{Q}. The contradiction we arrive at could be some conclusion contradicting one of our assumptions, or
+something obviously untrue like 1 = 0. The proof of Theorem \ref{theorem:irrationality_of_sqrt2} is an example of this.
+
+\begin{exercise}
+	\label{question:ex2}
+	Use the method of Proof by Contradiction to prove each of the following.
+	\begin{enumerate}
+		\item The cube root of 2 is irrational.
+		\item If $a$ is a rational number and $b$ is an irrational number, then $a+b$ is an irrational number.
+		\item There are infinitely many prime numbers.\footnote{There are dozens of proofs of this theorem, originally due to Euclid. Feel free to look one up online.}
+	\end{enumerate}
+\end{exercise}
+
+
+
+
+\subsection{Proof by Contrapositive}
+\label{section:proofByContrapositive}
+	Proof by contrapositive takes advantage of the logical equivalence between ``\textit{P} implies \textit{Q}'' and ``Not \textit{Q} implies Not \textit{P}''. For example, the assertion ``If it is my car, then it is red'' is equivalent to ``If that car is not red, then it is not mine''. So, to prove ``If \textit{P}, then \textit{Q}'' by the method of contrapositive means to prove
+	\begin{align*}
+		\mbox{``If Not \textit{Q}, then Not \textit{P}''.}
+	\end{align*}
+
+\noindent \textbf{How Is This Different From Proof by Contradiction?}
+The difference between the Contrapositive method and the Contradiction method is subtle. Let's examine how the two methods work when trying to prove ``If \textit{P}, then \textit{Q}".
+\begin{description}
+	\item[Method of Contradiction:] Assume \textit{P} and Not \textit{Q} and prove some sort of contradiction.
+	\item[Method of Contrapositive:] Assume Not \textit{Q} and prove Not \textit{P}.
+\end{description}
+The method of Contrapositive has the advantage that your goal is clear: Prove Not P. In the method of Contradiction, your goal is to prove a contradiction, but it is not always clear what the contradiction is going to be at the start.
+
+\begin{exercise}
+	\label{question:ex3}
+	Use the method of Proof by Contrapositive to prove each of the following.
+	\begin{enumerate}
+		\item If the product of two integers is even, then at least one of the two must be even.
+		\item If the product of two integers is odd, then both must be odd.
+		\item If the product of two real numbers is an irrational number, then at least one of the two must be an irrational number.
+	\end{enumerate}
+\end{exercise}
+
+
+\subsection{Converse}
+The converse of an assertion in the form ``If \textit{P}, then \textit{Q}" is the assertion
+\begin{align*}
+	\mbox{``If \textit{Q}, then \textit{P}"}.
+\end{align*}
+A common logical fallacy is to assume that if an assertion is true then so is its converse.
+
+
+\subsubsection{If and Only If}
+Many theorems are stated in the form ``\textit{P}, if, and only if, \textit{Q}". Another way to say the same thing is: ``\textit{Q} is necessary, and sufficient for \textit{P}". This means two things:
+\begin{center}
+	``If \textit{P}, Then \textit{Q}" \qquad and \qquad ``If \textit{Q}, Then \textit{P}".
+\end{center} So to prove an ``If, and Only If" theorem, you must prove the theorem and also its \textit{converse}.
+
+\begin{exercise}
+	Go back to the problems in Exercises \ref{question:ex1}, \ref{question:ex2}, \ref{question:ex3} and find the ones which are of the form ``If \textit{P}, Then \textit{Q}". For each of these:
+	\begin{itemize}
+		\item State the converse.
+		\item Prove or disprove the converse (by providing either a proof or a counterexample).
+		\item For the problems where the converse is also true rewrite the assertion as an "If, and Only If" statement.
+	\end{itemize}
+\end{exercise}
+
+
+
+
+
+
+
+
+\subsection{Quantifiers}
+It is extremely important in mathematics to be able to formulate very precise statements. To prevent ambiguous statements and logical fallacies the vocabulary used is very limited and every term has a well-defined meaning. The two concepts we need to get used to are {\it logical operators} and {\it quantifiers}.\\
+
+{\bf Logical Operators:} Operators allow us to form complex statements by combining simpler ones. The basic logical operators are {\it and}, {\it or}, and {\it not}. Their usage is the same as in everyday language. The more complicated logical operator that we'll be using a lot is {\it If - then -}. We've already encountered several examples of its usage in the previous sections.\\
+
+
+{\bf Quantifiers:} Quantifiers allow us to make abstract statements which are ``universally true'' without having to specify a concrete element. There are two commonly used	quantifiers:
+\begin{align*}
+	\mbox{\textbf{For all/every}} && \mbox{\textbf{There exists}}
+\end{align*}
+Understanding and formulating complex statements using these requires a lot of practice. You'll get used to these as the course progresses. Here are a few examples,
+\begin{example}$ $
+	\begin{enumerate}
+		\item \emph{For every} odd integer $a$, the integer $a+1$ is even.
+		\item An integer $a$ is even if and only if \emph{there exists} an integer $b$ such that $a = 2b$.
+		\item There \emph{do not exist} integers $p,q$ such that $\frac{p}{q} = \sqrt{2}$.
+		\item \emph{For every} non-zero rational number $x$ \emph{there exists} a rational number $y$ such that $x \cdot y = 1$.
+	\end{enumerate}
+\end{example}
+
+\subsubsection{Nesting Quantifiers}
+	When dealing with statements involving multiple quantifiers the order really matters; changing the order changes the meaning of a statement completely. When you're using multiple quantifiers in a single sentence you should always pause and check if you're using the right quantifiers in the right order.
+
+\begin{exercise}
+	For each of the following pairs, explain how changing the order of the quantifiers changes the meaning of the statement.\footnote{It's ok to a bit vague in your answers to this question.}
+	\begin{enumerate}
+		\item \begin{enumerate}
+			\item \emph{For every} even integer $a$ \emph{there exists} an integer $b$ such that $a = 2b$.
+			\item \emph{There exists} an integer $b$ such that \emph{for every} even integer $a$, $a = 2b$.
+		\end{enumerate}
+		\item \begin{enumerate}
+			\item \emph{For every} positive integer $n$ \emph{there exists} a positive real number $\epsilon$ such that $ \epsilon < 1/n$.
+			\item \emph{There exists} a positive real number $\epsilon$ such that \emph{for every} positive integer $n$, $ \epsilon < 1/n$.\footnote{Such an $\epsilon$ is called an {\bf infinitesimal}.	There are number systems, for example the \textbf{hypperreal numbers}, which extend the real numbers by incorporating infinitesimals.}
+		\end{enumerate}
+		\item \begin{enumerate}
+			\item \emph{For every} even integer $a$, \emph{for every} odd integer $b$, $a + b$ is odd.
+			\item \emph{For every} odd integer $b$, \emph{for every} even integer $a$, $a + b$ is odd.
+			\end{enumerate}
+		\item Let $f: \R \rightarrow \R$ be a function and let $\epsilon$ be a positive real number. \begin{enumerate}
+			\item {\it For every} $x$, {\it there exists} a $\delta > 0$ such that {\it for every} $y$, if $|x-y| < \delta$ then $|f(x) - f(y)| < \epsilon$.
+			\item {\it There exists} a $\delta > 0$ such that {\it for every} $x$, {\it for every} $y$, if $|x-y| < \delta$ then $|f(x) - f(y)| < \epsilon$.
+		\end{enumerate}
+	\end{enumerate}
+\end{exercise}
+
+	\subsubsection{Negating Nested Quantifiers}
+	As we saw in Sections \ref{section:proofByContradiction} and \ref{section:proofByContrapositive} we often need to negate mathematical statements.
+
+	In order to systematically negate complicated logical expressions, we observe that we can negate simple statements in the following manner. (These are called {\it De Morgan's laws}.)
+	\begin{center}
+		\begin{tabular}{|p{0.475\textwidth}|p{0.475\textwidth}|}
+			\hline Statement
+				&
+					Negation \\ \hline & \\
+			For every $x$ the statement $P$ is true.
+				&
+					There exists an $x$ such that the statement $P$ is false.
+					\\& \\ \hline &\\
+			There exists an $x$ such that the statement $P$ is true.
+				&
+					For every $x$ the statement $P$ is false.
+					\\& \\ \hline &\\
+			$P$ is true and $Q$ is true
+				&
+					$P$ is false or $Q$ is false.
+					\\& \\ \hline &\\
+			$P$ is true or $Q$ is true
+				&
+					$P$ is false and $Q$ is false.
+					\\& \\ \hline &\\
+			If $P$ then $Q$
+				&
+					$P$ but not $Q$.
+					\\& \\ \hline
+	\end{tabular}
+	\end{center}
+	If we have multiple quantifiers in a statement then we start with the outermost quantifier and recursively move inwards.
+	\begin{example}
+		The negation of {\it ``For every $x$, there exits a $y$ such that, the statement $P$ is true''} equals {\it ``There exists an $x$ such that, for every $y$, the statement $P$ is false.''}
+	\end{example}
+	\begin{exercise} Negate each of the following.
+		\begin{enumerate}
+			\item \emph{For every} even integer $a$ \emph{there exists} an integer $b$ such that $a = 2b$.
+			\item \emph{There exists} an integer $b$ such that \emph{for every} even integer $a$, $a = 2b$.
+			\item \emph{For every} positive integer $n$ \emph{there exists} a positive real number $\epsilon$ such that $ \epsilon < 1/n$.
+			\item \emph{There exists} a positive real number $\epsilon$ such that \emph{for every} integer $n$, $ \epsilon < 1/n$.
+			\item \emph{For every} even integer $a$, \emph{for every} odd integer $b$, $a + b$ is odd.
+			\item {\it For every} $\epsilon > 0$, {\it for every} $x$, {\it there exists} a $\delta > 0$ such that {\it for every} $y$, if $|x-y| < \delta$ then $|f(x) - f(y)| < \epsilon$.
+			\item {\it For every} $\epsilon > 0$, {\it there exists} a $\delta > 0$ such that {\it for every} $x$, {\it for every} $y$, if $|x-y| < \delta$ then $|f(x) - f(y)| < \epsilon$.
+		\end{enumerate}
+	\end{exercise}
+
+	\noindent {\bf Word of caution:} When the word ``and'' is used in a list it is not considered a logical operator (this is a deficiency of the English language). For example, negating the following expression
+	\begin{center}
+		\emph{For every} even integer $a$ and \emph{for every} odd integer $b$, $a + b$ is odd,
+	\end{center}
+	does not change the {\it and} to an {\it or} (what happens if you do change the {\it and} to an {\it or}?).

@@ -1,0 +1,196 @@
+%!TEX root=ClassNotes.tex
+
+\section{Completeness of the Real Numbers}
+Our next goal is to prove the IVT for continuous functions.
+
+\begin{theorem}[Intermediate Value Theorem]
+	If $f$ is a continuous function on $[a,b]$ and $k$ is a real number lying between $f(a)$ and $f(b)$ then there exists a real number $ c $ lying between $a$ and $b$ such that $f(c) = k$.
+\end{theorem}
+
+The proof of this trivial looking theorem relies on a defining axiom of the system of real numbers called {\it completeness} which we'll now try to understand. For this we'll need to rigorously define the simple notions of {\it min} and {\it max}.\\
+
+
+For a non-empty set $S$ of real numbers, it's maximum element can be defined as follows.
+\begin{definition}
+	\label{def:maximum}
+	$\max S$ is the element $a \in S$ such that $a \ge x$ for all elements $x \in S$.
+\end{definition}
+This definition exposes a subtle shortcoming of $\max S$. It doesn't exist even for {\it nice} sets.
+\begin{exercise}
+	What is $\max \: (0,1)$? Make sure that your answer agrees with Definition \ref{def:maximum}.
+\end{exercise}
+
+There is a more intricately defined number, called the {\bf supremum}, that we can associate to a set of real numbers which also captures the {\it largest-element} property. For sets containing infinitely many elements, the supremum, rather than the maximum gives us the correct {\it largest-element}.
+
+\begin{definition}
+	An {\bf upper bound} of a set $S$ is any real number $a$ satisfying $a \ge x$ for all elements $x \in S$. (Note that $a$ does not have to be in $S$.)
+\end{definition}
+
+\begin{exercise}
+	\label{q:upper_bounds}
+	Upper bounds are not unique. Find all the possible upper bounds on the following sets. (No proofs needed. Make sure you've found {\it all} the upper bounds.)
+	\begin{enumerate}
+		\item $[0,1]$
+		\item $(0,1)$
+		\item $\R$
+		\item $\{ 1/n :$ where $n$ is a positive integer$\}$
+		\item The set of rational numbers $x$ satisfying $x^2 < 2$
+		\item The set of irrational numbers in interval $[0,1]$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{definition}
+	The {\bf supremum} or the {\bf least upper bound} of a set $S$ of real numbers, denoted $\sup S$, is the smallest real number $a$ such that $a$ is an upper bound of $S$.
+\end{definition}
+
+\begin{exercise}
+	Find the supremum of the sets in Exercise \ref{q:upper_bounds}.
+\end{exercise}
+
+
+\begin{definition}
+	We say that a set $S$ is {\bf bounded from above} if it has at least one upper bound i.e. there exists a real number $a$ such that $a \ge x$ for all elements $x \in S$.
+\end{definition}
+
+\begin{exercise}
+	Which of the sets in Exercise \ref{q:upper_bounds} are bounded from above?\\
+\end{exercise}
+
+We can now state the {\bf Completeness of the Real Numbers}:
+\begin{theorem}
+	If a non-empty set $S$ is bounded from above then $S$ has a supremum.
+\end{theorem}
+
+Depending on exactly how the real numbers are constructed, this is either a theorem or an axiom. This theorem/axiom is the precise way of saying that there are no holes in the real line. (Read the Wikipedia article titled {\it Completeness of the real numbers}.) We'll next restate the property of being a supremum using our (favorite) language of $\epsilon$'s and $\delta$'s.
+
+
+\begin{exercise}
+	\label{q:supremum_closeness}
+	Let $S$ be a non-empty set that is bounded from above and let $L = \sup S$.
+	\begin{enumerate}
+		\item Show that for every $ \delta > 0 $, there exists an element $x \in S$ such that $L - x < \delta$. \hint{Proof by Contradiction.}
+		\item Let $a$ be an upper bound of $S$. Prove that, if for every $ \delta > 0 $, there exists an element $x \in S$ such that $a - x < \delta$, then $a = L$. \hint{Prove by Contrapositive.}
+	\end{enumerate}
+\end{exercise}
+Thus we're saying that elements of $S$ get infinitely close to the supremum.
+
+
+
+\subsection*{Optional Problems}
+
+Similarly to the supremum we can define the {\bf infimum} of a set $S$, denoted $S$, which corresponds to $\min S$.
+
+\begin{exercise}$ $
+	\begin{enumerate}
+		\item Define $\inf S$.
+		\item Find the infimum of all the sets in Exercise \ref{q:upper_bounds}.
+		\item Show that \begin{align*}
+			      \inf S = - \sup (-S)
+		      \end{align*} (if they exist), where $-S$ is the set containing elements of the form $-x$ where $x \in S$.
+		\item State the analogue of Exercise \ref{q:supremum_closeness} for $\inf S$.
+	\end{enumerate}
+\end{exercise}
+
+
+
+
+\newpage
+\subsection{Intermediate Value Theorem}
+
+We'll now prove the Intermediate Value Theorem. This is our first encounter with a complicated proof which requires multiple steps. You probably won't see the full picture until you completely write down the proof yourself. It'll help you a lot to draw pictures to keep a track of all the variables. \\\\
+\begin{tabular}{|p{\textwidth}|}
+  \hline \\{\it Once you have solved all the exercises in the proof of Theorem \ref{theorem:IVT}, submit your final solution as one single logically coherent proof of the IVT, also include all the text that is in between the exercises, so that you yourself see how all the pieces fit together. This will also teach you to write complex proofs.}\\\\
+  \hline
+\end{tabular}
+
+\vspace{1em}
+We'll need the following proposition from the previous section, which says that the elements of a set $S$ are infinitely close to it's supremum.
+\begin{prop}
+  \label{thm:sup_lemma}
+  For a set $S$, if $L = \sup S$, then
+  for every $ \delta > 0 $, there exists an element $x \in S$ such that $L - x < \delta$.
+\end{prop}
+
+\begin{theorem}[Intermediate Value Theorem]
+	\label{theorem:IVT}
+	Let $f$ be a continuous function on $[a,b]$ and let $k$ be a real number satisfying
+	\begin{align*}
+		f(a) < k < f(b).
+	\end{align*}
+	Then, there exists a real number $c$ satisfying $a < c < b$ such that
+	\begin{align*}
+		f(c) = k.
+	\end{align*}
+\end{theorem}
+
+
+\begin{proof}[Proof of \ref{theorem:IVT}]
+
+	We'll first prove the following slightly easier version.
+	\begin{prop}
+		\label{theorem:easy_IVT}
+		If $g$ is a continuous function on $[a,b]$ satisfying
+		\begin{align*}
+			g(a) < 0< g(b)
+		\end{align*}
+		then, there exists a real number $c$ satisfying $a < c < b$ such that
+		\begin{align*}
+			g(c) = 0.
+		\end{align*}
+	\end{prop}
+	\begin{proof}[Proof of \ref{theorem:easy_IVT}]
+		Let $g,a,b$ be as in the statement of the Proposition. We'll construct a number $c$ that satisfies $a < c < b$ and $g(c) = 0$.
+
+		Let $S$ be a set defined as follows,
+		\begin{align*}
+			S = \{ x \mid a \le x \le b \mbox{ and } g(x) \le 0\}.
+		\end{align*}
+		\begin{exercise}
+			Argue that $S$ is non-empty and is bounded from above.
+		\end{exercise}
+		Hence, $S$ has a supremum by the {\it Completeness Property of Real Numbers}. Denote this supremum by $c$. We'll prove that\\
+
+    \begin{indentPara}
+      {\bf Claim: } $g(c) = 0$.\\
+    \end{indentPara}
+
+		We'll prove this claim by contradiction. Suppose on the contrary that $g(c) \neq 0$. There are two possible cases:\\
+		\begin{indentPara}
+      \begin{description}
+  			\item[Case 1:] $g(c) < 0$
+  			\item[Case 2:] $g(c) > 0$\\
+  		\end{description}
+    \end{indentPara}
+		Suppose {\bf Case 1} is true i.e. $g(c) < 0$.
+		\begin{exercise}
+			\begin{enumerate}
+				\item Use the formal definition of continuity (from right) of $g$ to prove that there exists an $x > c$ such that $f(x) < 0$.\hint{Use $\epsilon = -g(c)/2$.}
+				\item Argue that this contradicts one of your assumptions, hence $g(c)$ cannot be less than 0.
+			\end{enumerate}
+		\end{exercise}
+		\noindent Suppose {\bf Case 2} is true i.e. $g(c)> 0$.
+		\begin{exercise}
+			\begin{enumerate}
+				\item Use the formal definition of continuity (from left) of $g$ to prove that there exists a $\delta$ such that, for every $x$, if $c - x < \delta$ then $g(x) > 0$.\hint{Use $\epsilon = g(c)/2$.}
+  				\item For this particular $\delta$, prove that, for every $x$ in $S$, $c - x > \delta$.
+				\item Argue that this contradicts Proposition \ref{thm:sup_lemma}, hence $g(c)$ cannot be greater than 0.
+			\end{enumerate}
+		\end{exercise}
+		Thus we've contradicted both the possible cases, which completes the proof by contraction and proves the Claim that $g(c) = 0$.
+
+    By construction $c$ satisfies $ a < c < b$. So we've constructed a $c$ such that $a < c < b$ and $g(c) = 0$ which completes the proof of Proposition \ref{theorem:easy_IVT}.
+	\end{proof}
+	\begin{exercise}
+		Going back to $f$, use the function $g(x) = f(x) - k$ in Proposition \ref{theorem:easy_IVT} to complete the proof of Theorem \ref{theorem:IVT}.
+	\end{exercise}
+\end{proof}
+
+
+Both the hypotheses are necessary for the IVT to be true.
+This means that we must be crucially using these hypotheses in our proof somewhere and the proof should fail if we do not have these assumptions. It is clear where we are using continuity, the other one is more subtle.
+\begin{exercise}$ $
+	\begin{enumerate}
+		\item Find the {\it exact} argument in your proof of Proposition \ref{theorem:easy_IVT} which fails if we assume $0 < g(a) < g(b)$.
+		\item Find the {\it exact} argument in your proof of Proposition \ref{theorem:easy_IVT} which fails if we assume $ g(a) < g(b) < 0$.
+	\end{enumerate}
+\end{exercise}

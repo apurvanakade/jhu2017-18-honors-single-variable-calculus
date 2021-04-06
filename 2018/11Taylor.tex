@@ -1,0 +1,252 @@
+%!TEX root=ClassNotes.tex
+
+\section{Taylor Series}
+Taylor series is a technique used to approximate functions using {\it polynomials}.
+
+\begin{definition}
+  \label{def:Taylor_series}
+For a positive integer $n$, a real number $a$, and an infinitely differentiable function $f$, the {\bf n$^{th}$ Taylor polynomial/approximation centered at $a$}, denoted $T_nf (x)$, is a degree $n$ polynomial defined as\\
+  \begin{align*}
+    T_nf (x) &= f(a)
+    + f'(a) \cdot \dfrac{(x-a)}{1}
+    + f''(a) \cdot \dfrac{(x-a)^2}{2!}
+    + \dots
+    + f^{(n)}(a) \cdot \dfrac{(x-a)^n}{n!}\\
+  \end{align*}
+  where $f^{(n)}(a)$ denotes the $n^{th}$ derivative of $f$ at $a$.\footnote{Recall that $n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1 $.}
+The limit $n \rightarrow \infty$ of the above series is called the {\bf Taylor series $Tf(x)$}.\\
+\begin{align*}
+  Tf(x) &= f(a)
+  + f'(a) \cdot \dfrac{(x-a)}{1}
+  + f''(a) \cdot \dfrac{(x-a)^2}{2!}
+  + f^{(3)}(a) \cdot \dfrac{(x-a)^3}{3!}
+  + \dots\\
+\end{align*}
+\end{definition}
+
+\begin{remark}
+  The Taylor series defined above is just a {\it formal series}.
+  It is not always possible to plug in a value for $x$ because of convergence issues.
+  We'll discuss this in the later sections.
+\end{remark}
+
+We'll mostly be interested in the Taylor series centered at $a = 0$, \\
+\begin{align*}
+  Tf(x)
+  &=
+  f(0)
+  + f'(0) \cdot \dfrac{x}{1}
+  + f''(0) \cdot \dfrac{x^2}{2!}
+  + f^{(3)}(0) \cdot \dfrac{x^3}{3!}
+  + \dots\\
+\end{align*}
+In this case, $Tf(x)$ is called the $n^{th}$ {\bf Maclaurin series}.
+
+
+
+\begin{exercise}
+  For each of the following functions compute $f^{(n)}(0)$, for positive integers $n$, and use these to compute the Maclaurin series.
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item $e^x$
+    \item $\sin x$
+    \item $\cos x$
+    \item $\ln {(1+x)}$
+    \item $\dfrac{1}{1-x}$
+    \item (Optional) $\tan^{-1} x$
+  \end{enumerate}
+  \end{multicols}
+\end{exercise}
+
+\begin{exercise}
+  This problem explains why the Definition \ref{def:Taylor_series} is the ``correct'' definition for Taylor series.
+  \begin{enumerate}
+    \item Let $f(x) = x^k$. Compute $T_n f(x)$ centered at $0$ for
+    \begin{enumerate}
+      \item $n < k$
+      \item $n \ge k$
+    \end{enumerate}
+    \item More generally, let
+    \begin{align*}
+      f(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_k x^k
+    \end{align*}
+    Using the previous part, compute $T_n f(x)$ for
+    \begin{enumerate}
+      \item $n < k$
+      \item $n \ge k$
+    \end{enumerate}
+     What is the Maclaurin series for this $f(x)$?
+  \end{enumerate}
+\end{exercise}
+The above statement is more generally for all Taylor series centered at any point $a$.
+\begin{exercise}{\bf (Optional)}
+  Show that the Taylor series of $f(x) = x^n$, centered at a real number $a$, equals $x^n$. Argue that this is more generally true for an arbitrary polynomial $f(x)$.
+\end{exercise}
+
+\subsection{Remainder Term}
+As mentioned earlier, Definition \ref{def:Taylor_series} defines a \textit{formal series} and it not possible to make sense of $Tf(x)$ for a real number $x$.
+The two important questions that we need to answer are:
+\begin{enumerate}
+  \item  Does the limit $\lim \limits_{n \rightarrow \infty}T_n f(x)$ exist?
+  \item Does the limit $\lim \limits_{n \rightarrow \infty}T_n f(x)$ equal $f(x)$?
+\end{enumerate}
+Unless the answer to both the questions is {\it yes} it is not possible to use Taylor polynomials for approximating the function $f(x)$.
+
+Both the questions are in generally difficult to answer.
+To tackle the first question we need techniques from series and sequences.
+In this section, we'll focus on answering the second question which can be done using basic Calculus.
+
+
+\begin{definition}
+  For a smooth function $f$ and real numbers $x$, $a$, the {\bf $n^{th}$ error term} or the {\bf $n^{th}$ remainder term $R_nf(x)$} is defined as
+  \begin{align*}
+    R_nf(x)
+    &= f(x) - T_nf(x)
+  \end{align*}
+  where $T_n f(x)$ is the $n^{th}$ Taylor approximation of $f$ centered at $a$, so that $f(x) = T_nf(x) + R_nf(x)$.
+Thus we can say that
+\begin{align*}
+  \lim \limits_{n \rightarrow \infty}T_n f(x) = f(x)
+\end{align*}
+if and only if
+\begin{align*}
+  \lim \limits_{n \rightarrow \infty}R_n f(x) = 0.
+\end{align*}
+\end{definition}
+
+\newpage
+
+The following Theorem allows us to compute this remainder term using integrals.
+\begin{theorem}
+  \label{thm:remainder_term}
+  With the notation as above, the remainder term is given by
+  \begin{align*}
+    R_nf(x) = \dfrac{1}{n!} \cdot \int_a^x {(x-t)^n \cdot {f^{(n+1)}(t)} } \: dt
+  \end{align*}
+\end{theorem}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item Using integration by parts (if necessary), compute
+    \begin{enumerate}
+      \item $\int_0^x {f'(t)} \: dt$
+      \item $\int_0^x (x-t) \cdot {f''(t)} \: dt$
+      \item $\int_0^x (x-t)^2 \cdot {f^{(3)}(t)} \: dt$
+    \end{enumerate}
+    \item{\bf (Optional)} By repeatedly applying integration by parts, prove that
+    \begin{align*}
+      \dfrac{1}{n!} \cdot \int_0^x {(x-t)^n \cdot {f^{(n+1)}(t)}} \: dt
+    \end{align*}
+    equals
+    \begin{align*}
+      f(x) - \left( f(0)
+      + f'(0) \cdot \dfrac{x}{1}
+      + f''(0) \cdot \dfrac{x^2}{2!}
+      + \dots
+      + f^{(n)}(0) \cdot \dfrac{x^n}{n!}
+      \right)
+    \end{align*}
+    thereby proving Theorem \ref{thm:remainder_term} for $a=0$.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{\bf (Optional)}
+  Prove Theorem \ref{thm:remainder_term} for arbitrary real number $a$.
+\end{exercise}
+
+
+\newpage
+\subsection{Computing using Taylor Series}
+We can use the Taylor series (centered at 0) to do computations if
+\begin{enumerate}
+  \item we can compute all the derivatives $f^{(n)}(0)$ for all positive integers $n$
+  \item $ \lim \limits_{n \rightarrow \infty}R_n f(x) = 0$.
+\end{enumerate}
+The condition $ \lim \limits_{n \rightarrow \infty}R_n f(x) = 0$ is highly non-trivial and not checking it leads to absurd results.
+
+\begin{exercise}
+  Let $f(x) = \dfrac{1}{1-x}$.
+  What happens to the value of the Maclaurin series $Tf(x)$ for $x=2$? What is $f(2)$?
+\end{exercise}
+For $f(x) = \dfrac{1}{1-x}$ we can show that $ \lim \limits_{n \rightarrow \infty}R_n f(2) = \infty$ (and not 0) and hence the difference between the Taylor series $Tf(2)$ and the function $f(2)$ blows up to infinity.
+In the next section, we'll prove the following theorem which says that this does not happen for exponential and trigonometric functions.
+\begin{theorem}
+  \label{thm:Taylor_series_exponential}
+  If $f(x) = e^x$, $\sin x$, and $\cos x$, then $\lim \limits_{n \rightarrow \infty}R_n f(x) = 0$ for \textit{all real numbers} x.
+\end{theorem}
+
+Hence, for all real numbers $x$, $\lim \limits_{n \rightarrow \infty}T_n f(x) = f(x)$ for exponential and trigonometric functions and we can use the Taylor series to approximate.
+
+\begin{exercise}
+  Use the Maclaurin series of $e^x$ to compute the value of $e$ correct up to 2 decimal places.
+\end{exercise}
+
+\begin{exercise}
+  \begin{enumerate}
+    \item Theorem \ref{thm:Taylor_series_exponential} is also true for $\tan^{-1} x$, the proof is easy but technical. The Maclaurin series of $\tan^{-1} x$ is given by
+    \begin{align*}
+      x - \dfrac{x^3}{3} + \dfrac{x^5}{5} - \dfrac{x^7}{7} + \dfrac{x^9}{9} + - \dots
+    \end{align*}
+    Using this find an expression (as an infinite sum) for $\pi$.\hint{Use $x = 1$.}
+    \item Use the first 10 terms of this sum to find an approximate value for $\pi$.
+    This method for computing $\pi$ is not used in practice as the \textit{rate of convergence} of the Maclaurin series is very slow.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Theorem \ref{thm:Taylor_series_exponential} is true even if $x$ is a complex number (the proof requires complex analysis).
+  Compute the Taylor series of $e^{i\theta}$, $\cos \theta$, $\sin \theta$. Use these to prove the {\it Euler's identity},
+\begin{align*}
+    e^{i\theta} &= \cos \theta + i \sin \theta
+\end{align*}
+\end{exercise}
+
+
+
+\subsection{Estimating the Remainder Term}
+Finally, we  want to prove Theorem \ref{thm:Taylor_series_exponential}.
+
+\begin{exercise} {\bf (Optional)}
+  Let $x$ be a positive real number.
+   For each of the following functions $f(x)$, show that there is a constant $M$ such that for all $ t \in (0,x)$  and all positive integers $n$ we have $|f^{(n)}(t)| < M$. (Note that $M$ can depend on $x$ but not on $n$ or $t$.)
+   \begin{multicols}{2}
+     \begin{enumerate}
+       \item $e^x$
+       \item $\sin x$
+       \item $\cos x$
+     \end{enumerate}
+   \end{multicols}
+\end{exercise}
+Using the above problem, the proof of Theorem \ref{thm:Taylor_series_exponential} will be complete once we prove the following Proposition.
+\begin{prop}
+  Let $x$ be a positive real number. If there is a real number $M$ such that for all $ t \in (0,x)$  and all positive integers $n$ we have $|f^{(n)}(x)| < M$ then $R_n f(x) \rightarrow 0$ as $n \rightarrow \infty$.
+\end{prop}
+\begin{proof}
+  By definition,
+  \begin{align*}
+    R_n f(x) = \dfrac{1}{n!} \cdot \int_0^x {(x-t)^n \cdot {f^{(n+1)}(t)}} \: dt
+  \end{align*}
+  Because $(x-t)^n < x^n$ and $|f^{(n+1)}(t)| < M$ for all $0 < t < x$  and all positive integers $n$, we get
+  \begin{align*}
+    |R_n f(x)|
+    &=
+    \left|\dfrac{1}{n!} \cdot \int_0^x {(x-t)^n \cdot {f^{(n+1)}(t)}} \: dt \right|\\
+    &< \left|\dfrac{1}{n!} \cdot \int_0^x x^n \cdot M \: dt \right| \\
+    &=  \left|\dfrac{1}{n!} \cdot x^n \cdot M \int_0^x 1 \: dt \right| \\
+    &=  \left|\dfrac{1}{n!} \cdot x^n \cdot M x \right| \\
+    &= \dfrac{M x^{n+1}}{n!}
+  \end{align*}
+  One can show that for any real number $x$, $\lim \limits_{n \rightarrow \infty} x^{n+1} / n! = 0$ (this is easy, see if you can work out the details) so that
+\begin{align*}
+    \lim \limits_{n \rightarrow \infty} |R_n f(x)|
+    &<
+    \lim \limits_{n \rightarrow \infty} \dfrac{M x^{n+1}}{n!}
+    \\
+    &= {M}\cdot \lim \limits_{n \rightarrow \infty} \dfrac{x^{n+1}}{n!} \\
+    &= M \cdot 0 = 0
+\end{align*}
+\end{proof}
+
+To summarize, Taylor series provides us a tool for approximating functions using polynomials (in the cases where the remainder term tends to 0).
+This is a very common technique in analysis: we try to approximate a function by a series of simpler functions and show that the difference between the two tends to 0.
+Fourier series, for example, does this using trigonometric functions.

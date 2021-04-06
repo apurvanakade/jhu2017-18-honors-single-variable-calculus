@@ -1,0 +1,215 @@
+\documentclass[9pt, a4paper, oneside]{amsart}
+
+
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{multicol}
+\pagestyle{fancy}
+
+\newlist{questions}{enumerate}{1}
+\setlist[questions, 1]{label = \bf Q.\arabic*., itemsep=1em}
+
+
+% \setlength{\topmargin}{-10mm}
+% \setlength{\textheight}{235mm}
+% \setlength{\oddsidemargin}{-3mm}
+% \setlength{\textwidth}{165mm}
+% \setlength{\footskip}{10mm}
+
+
+
+
+
+
+\lhead{\scshape Apurva Nakade}
+\rhead{\scshape Honors Single Variable Calculus}
+\renewcommand*{\thepage}{\small\arabic{page}}
+\title{Problem Set 03}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+
+\section*{Part 1 - Continuity}
+
+\begin{questions}[resume]
+
+	\item
+	\begin{enumerate}
+		\item Use the $ \epsilon - \delta$ definition to show that the constant function $ f(x) = c $ is continuous everywhere.
+
+		\item Use the $ \epsilon - \delta$ definition to show that the function $ f(x) = x $ is continuous everywhere.
+
+		\item Let $ p(x)$ a polynomial of degree $ n$. Use Theorem 2 to prove that $p(x)$ is continuous everywhere.
+	\end{enumerate}
+
+	Trigonometric functions, exponential functions and logarithms are also continuous wherever they are defined. We will assume this fact without proof for now and perhaps come back to it later.
+
+	\item
+	\begin{enumerate}
+		\item Prove that if $ \lim \limits_{x \rightarrow 0} f(x)/x = l$ and $ b \neq 0$ then $$ \lim \limits_{x \rightarrow 0} f(bx)/x = bl$$
+		\item Assuming $ \lim \limits_{x \rightarrow 0} \sin x / x = 1$ find  $ \lim \limits_{x \rightarrow 0}$ for each of the following functions,
+		      \begin{multicols}{3}
+		      	\begin{enumerate}
+		      		\item $\sin (2x)/ x$
+		      		\item $\sin (ax)/ \sin(bx)$
+		      		\item $\sin^2 (2x)/ x$
+		      		\item $\sin^2 (2x)/ x^2$
+		      	\end{enumerate}
+		      \end{multicols}
+
+	\end{enumerate}
+
+
+	\item Determine, with proof, the points at which the following function is continuous.
+	$$ f(x) = \begin{cases} 0 & \mbox{ if $ x$ is rational } \\ x & \mbox{ otherwise }\end{cases}$$
+
+
+	\item Suppose that $ g$ is continuous on $[a,b]$ and $ h$ is continuous on $[b,c]$ and that $ g(b) = h(b)$. Define a new function
+	\begin{align*}
+		f(x) = \begin{cases} g(x) & \mbox{ if }a \le x < b \\ h(x) & \mbox{ if }b \le x \le c  \end{cases}
+	\end{align*}
+	Show that $ f(x)$ is continuous on $ [a,c]$. (Thus, continuous functions can be `glued'.)
+
+\end{questions}
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Part 2 - Three Hard Theorems}
+In this HW you can use any of the Theorems 1-9 from Chapter 7 to solve the problems.
+\begin{questions}[resume]
+	\item For each of the polynomial functions $ f$, find (by trial and error) an integer $ n$ such that $ f(x) = 0$ for some $ x$ in  $[n,n+1]$.
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ x^3 - x + 3$
+			\item $ x^5 + 5x^4 + 2x + 1$
+			\item $ x^5 + x +1$
+			\item $ 4x^2 - 4x + 1$
+		\end{enumerate}
+	\end{multicols}
+
+	\item Suppose $ f$ and $ g$ are continuous on $ [a,b]$ and that $ f(a) < g(a)$ and $ f(b) > g(b)$. Prove that $ f(x) = g(x)$ for some $ x$ in $ (a,b)$.
+
+	\item Suppose that $ f$ is a continuous function with $ f(x) > 0$ for all $ x$, and $ \lim \limits_{x \rightarrow \infty} f(x) = 0 = \lim \limits_{x \rightarrow -\infty} f(x)$. (Draw a picture.) We want to prove that there is some number $ y$ such that $ f(y) \ge f(x)$ for all $ x$.
+	\begin{enumerate}
+		\item Choose an arbitrary positive real number $s$. Using the $ \epsilon - \delta $ definition of $ \lim \limits _ {x \rightarrow \infty}$ and $ \lim \limits _ {x \rightarrow -\infty}$ show that there is a number $ N$ such that $f(s) > f(x)$ for all $ |x| > N$.
+		\item Let $ M = \max(N,s)$ and let $ y$ be the real number in the the interval $ [-M,M]$ such that $ f(y) \ge f(x)$ for all $ x$ in $[-M,M]$. Why does such a $ y$ exist?
+		\item Using the fact that $ s \le M$ show that $ f(y) > f(x)$ for all $ |x| > M$.
+		\item  Using part (2) and (3) conclude that $ f(y) \ge f(x)$ for all real numbers $ x$.
+
+		\item (Optional) Does there exist a real number $ y$ such that $ f(y) \le f(x)$ for all $ x$?
+	\end{enumerate}
+
+	\item Suppose that $ f(x)$ is continuous on $ [a,b]$ and that $ f(x)$ is always rational. What can be said about $ f$? (Hint: Use the intermediate value theorem.)
+
+\end{questions}
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Part 3 - Least Upper Bounds}
+\begin{questions}[resume]
+	\item In this problem we'll prove the following theorem.
+	\begin{quote}
+		\textbf{Theorem 9.} For every polynomial $ p(x)$ of odd degree $ n$ there is a real number $ x$ such that $ p(x)=0$.
+	\end{quote}
+	The idea of the proof is to show that for large values of $|x|$ the polynomial $ p(x)$ behaves like $ x^n$. Without any loss of generality assume that the polynomial is of the form
+	\begin{align*}
+		p(x) & = x^n + a_{1} x^{n-1} + a_{2} x^{n-2} + \cdots + a_{n-1} x + a_n                                                      \\
+		     & = x^n\left( 1 + \dfrac{a_{1}} {x} + \dfrac{a_{2}} {x^2} + \cdots + \dfrac{a_{n-1}}{x^{n-1}} + \dfrac{a_n}{x^n}\right)
+	\end{align*}
+	\begin{enumerate}
+		\item Argue that there exists a number $ N$ such that $ \left|\dfrac{a_{i}}{x^{i}}\right| < \dfrac{1}{2n}$ for all $ |x| > N$ and for all $1 \le i \le n$. \\(It's ok to not be completely rigorous for this part.)
+		\item Show that for all $ |x| > N$,
+		      \begin{align*}
+		      	-\dfrac{1}{2} < \dfrac{a_{1}} {x} + \dfrac{a_{2}} {x^2} + \cdots + \dfrac{a_{n-1}}{x^{n-1}} + \dfrac{a_n}{x^n} < \dfrac{1}{2}
+		      \end{align*}
+		\item
+		      Show that for all $ |x| > N$,
+		      \begin{align*}
+		      	\dfrac{1}{2} < \dfrac{p(x)}{x^n} < \dfrac{3}{2}
+		      \end{align*}
+		\item Argue that because $ n$ is odd this implies that there exist real numbers $ a > N$, $b < -N$ with $ p(a) > 0 > p(b)$. Conclude that $ p(x) = 0$ for some number $ x$.
+	\end{enumerate}
+
+	\item
+	Find the supremum (least upper bound) and infimum (greatest lower bound) of the following sets. (Proofs are not required, it's enough to draw pictures.)
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $ \left\{ 1/n : n \in \mathbb{N} \right\}$
+			\item $ \left\{ 1/n : n \in \mathbb{Z} \mbox{ and } n \neq 0 \right\}$
+			\item $ \left\{ 1/n + (-1)^n: n \in \mathbb{N} \right\}$
+			\item $ \left\{ x : x^2 < 2 \mbox{ and } x \mbox{ is rational} \right\}$
+			\item $ \left\{ x : x^2 + x - 2 \ge 0  \right \}$
+			\item $ \left\{ x : x^2 + x - 2 \le 0  \right \}$
+		\end{enumerate}
+	\end{multicols}
+	%
+	% \item For a non-empty set $ A$ let $ -A$ denote the set of all $ -x$ for $ x$ in $ A$. Prove that
+	% \begin{enumerate}
+	% 	\item $ \sup (-A) = - \inf A$
+	% 	\item $ \inf (-A) = - \sup A$
+	% \end{enumerate}
+
+	\item In this problem we'll prove the Intermediate Value Theorem using (P13).
+	\begin{quote}
+		\textbf{Intermediate Value Theorem.} If $ f$ is a continuous function on $ [a,b]$ satisfying $ f(a) < c < f(b)$, then there exists some $ x$ in $ [a,b]$ such that $ f(x) = c$.
+	\end{quote}
+
+	\begin{enumerate}
+		\item Let $ A$ be the set of $ x$ in $ [a,b]$ such that $ f(x) \le c$. Why is the set $ A$ non-empty?
+
+		\item 	As $ A$ is a non-empty subset of $ [a,b]$ by (P13) $ A$ has a least upper bound, let $ y = \sup A$. We want to show that $ f(y) = c$. We'll prove this by contradiction, assume on the contrary that $ f(y) \neq c$.
+		      \begin{description}
+		      	\item[Case I $ f(y) < c$ ] In this case argue that for some $ \delta$ the number $ y + \delta$ is in $ A$ and hence $ y$ cannot be an upper bound.
+		      	\item[Case II $ f(y) > c$ ] In this case argue that for some $ \delta$ the number $ y - \delta$ is also an upper bound of $ A$ and hence $ y$ cannot be the \emph{least} upper bound.
+		      \end{description}
+
+		\item Give an example to show that the Intermediate Value Theorem does not hold if the function $ f$ is discontinuous. Also describe the set $ A$, defined as above, for your example and explain why the above proof fails for this case.
+	\end{enumerate}
+
+
+	% \item Proofs are not required for this problem, however describe your answers as precisely as possible.
+	%
+	% \begin{enumerate}
+	% 	\item Find a function which is discontinuous at $1, \frac{1}{2}, \frac{1}{3},\frac{1}{4}, \ldots$ but continuous at all other points.
+	% 	\item Find a function which is discontinuous at $1, \frac{1}{2}, \frac{1}{3},\frac{1}{4}, \ldots$ and 0 but continuous at all other points.
+	% \end{enumerate}
+	% If $ \lim \limits _ {x \rightarrow a} f(x)$ exists but is $ \neq f(a)$ then $ f$ is said to have a \textbf{removable singularity} at $ a$.
+	% \begin{enumerate}[resume]
+	% 	\item Give an example of a function $ f$ with a removable discontinuity at 0.
+	% 	\item Given an example of a function $ f$ with a discontinuity at 0	which is not removable.
+	% \end{enumerate}
+
+\end{questions}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

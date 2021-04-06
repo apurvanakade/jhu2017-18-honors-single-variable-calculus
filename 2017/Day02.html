@@ -1,0 +1,301 @@
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <meta name="GENERATOR" content="Mozilla/4.04 (Macintosh; I; PPC) [Netscape]">
+    <title>Day 02</title>
+  </head>
+
+  <body>
+
+    <center>
+      <h1>
+Proof by Contrapositive</h1></center>
+
+    Proof by contrapositive takes advantage of the logical equivalence between "P implies Q" and "Not Q implies Not P". For example, the assertion "If it is my car, then it is red" is equivalent to "If that car is not red, then it is not mine". So, to prove
+    "If P, Then Q" by the method of contrapositive means to prove "If Not Q, Then Not P".
+
+    <h2> Example: Parity</h2> Here is a simple example that illustrates the method. The proof will use the following definitions.
+
+    <p><b>Definitions.</b>
+
+    </p>
+    <ol>
+      <li>An integer x is called <b>even</b> (respectively <b>odd</b>) if there is another integer k for which x = 2k (respectively 2k+1).
+      </li>
+      <li> Two integers are said to have the same <b>parity</b> if they are both odd or both even.
+
+      </li>
+    </ol>
+
+    For the purpose of this example we will assume as proved that each integer is either even or odd.
+
+
+    <p><b> Theorem.</b> If x and y are two integers for which x+y is even, then x and y have the same parity.
+
+    </p>
+    <p><b>Proof.</b> The contrapositive version of this theorem is "If x and y are two integers with opposite parity, then their sum must be odd." So we assume x and y have opposite parity. Since one of these integers is even and the other odd, there is
+      no loss of generality to suppose x is even and y is odd. Thus, there are integers k and m for which x = 2k and y = 2m+1. Now then, we compute the sum x+y = 2k + 2m + 1 = 2(k+m) + 1, which is an odd integer by definition.
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2>How Is This Different From Proof by Contradiction?</h2> The difference between the Contrapositive method and the Contradiction method is subtle. Let's examine how the two methods work when trying to prove "If P, Then Q".
+
+    <ul>
+
+      <li> Method of Contradiction: Assume P and Not Q and prove some sort of contradiction.
+
+      </li>
+      <li> Method of Contrapositive: Assume Not Q and prove Not P.
+
+      </li>
+    </ul>
+
+    The method of Contrapositive has the advantage that your goal is clear: Prove Not P. In the method of Contradiction, your goal is to prove a contradiction, but it is not always clear what the contradiction is going to be at the start.
+
+    <h2> A Test For Perfect Squares</h2> In this example, we will need two notions. An integer n is called a <b> perfect square</b> if there is another integer k such that n = k<sup>2</sup>. For example, 13689 is a perfect square since 13689 = 117<sup>2</sup>.
+
+    <p>The second idea is the remainder and modular arithmetic. For two integers m and n, <b>n mod(m) = r</b> will be the remainder resulting when we divide m into n. This means that there is an integer q such that n = mq + r. For example, 127 mod(29) =
+      11 since 29 will go into 127 4 times with a remainder of 11 (or, in other words, 127 = (4)(29) + 11). Determining whether or not a positve integer is a perfect square might be difficult. For example, is 82,642,834,671 a perfect square? First we
+      compute 82,642,834,671 mod(4) = 3. Then use this theorem:
+
+    </p>
+    <p><b>Theorem.</b> If n is a positive integer such that n mod(4) is 2 or 3, then n is not a perfect square.
+
+
+    </p>
+    <p><b>Proof.</b> We will prove the contrapositive version: "If n is a perfect square then n mod(4) must be 0 or 1." (Do you understand why this is the contrapositive version?) Suppose n = k<sup>2</sup>. There are four cases to consider.
+
+    </p>
+    <ol>
+
+      <li> If k mod(4) = 0, then k = 4q, for some integer q. Then, n = k<sup>2</sup> = 16 q<sup>2</sup> = 4(4 q<sup>2</sup>) , i.e. n mod(4) = 0.
+
+      </li>
+      <li> If k mod(4) = 1, then k = 4q + 1, for some integer q. Then, n = k<sup>2</sup> = 16 q<sup>2</sup> + 8 q + 1= 4(4 q<sup>2</sup> + 2 q) + 1, i.e. n mod(4) = 1.
+
+      </li>
+      <li> If k mod(4) = 2, then k = 4q + 2, for some integer q. Then, n = k<sup>2</sup> = 16 q<sup>2</sup> + 16 q + 4 = 4(4 q<sup>2</sup> + 4 q + 1), i.e. n mod(4) = 0.
+
+      </li>
+      <li> If k mod(4) = 3, then k = 4q + 3, for some integer q. Then, n = k<sup>2</sup> = 16 q<sup>2</sup> + 24 q + 9 = 4(4 q<sup>2</sup> + 6 q + 2) + 1, i.e. n mod(4) = 1.
+
+      </li>
+    </ol>
+    <div align="right">
+      &#8718;
+    </div>
+
+
+    <h2>
+Exercises</h2> Prove each of the following by the contrapositive method.
+    <ol>
+      <p></p>
+      <li> If x and y are two integers whose product is even, then at least one of the two must be even.
+
+
+        <p></p>
+      </li>
+      <li> If x and y are two integers whose product is odd, then both must be odd.
+
+        <p></p>
+      </li>
+      <li> If a and b a real numbers such that the product a b is an irrational number, then either a or b must be an irration number.
+
+      </li>
+    </ol>
+
+
+    <h1 align="CENTER">Counter Examples</h1>
+
+    <b>Counter examples</b> play an important role in mathematics. Whereas a complicated proof may be the only way to demonstrate the validity of a particular theorem, a single counter example is all that is need to refute the validity of a proposed theorem.
+    For example, numbers in the form 2
+    <sup>2<sup>n</sup></sup> + 1, where n is a positive integer, were once thought to be prime. These numbers are prime for n = 1, 2, 3 and 4. But when n = 5, we get
+
+    <p></p>
+    <center>2<sup>2<sup>5</sup></sup> + 1 = 4294967297 = (641)(6700417)</center>
+
+    <p>a composite number. Conclusion: When faced with a number in the form 2<sup>2<sup>n</sup></sup> + 1, we are not allowed to assume it is either prime or composite, unless we know for sure for some other reason.
+
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    <p> A natural place for counter examples to occur is when the converse of a known theorem comes into question. The <b>converse</b> of an assertion in the form "If P, Then Q" is the assertion "If Q, Then P".
+
+    </p>
+    <h2>Example: From Calculus</h2> In Calculus you learn that if a function is differentiable at a point, then it is continuous at that point. What would the converse assert? It would say that if a function is continuous at a point, then it is differentiable at that point. But you
+    know this is false. The counter example is f(x) = |x|. This function is continuous at x = 0, but it is not differentiable at x=0. This one counter example is all we need to refute the converse.
+
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2>Example: Rational &amp; Irrational Numbers</h2> If a and b are rational numbers, then so is a+b. The proof is very simple. By definition of a rational number, a = p/q and b = s/t for some quadruple of integers p, q, s, and t and such that q and t are nonzero. The sum a+b = p/q + s/t = (p t + q
+    s)/(q t), a rational number by definition. What would the converse say? It would assert "If a and b are real numbers such that a + b is a rational number, then a and b are rational numbers." But this is false. Just let a = sqrt(2) + 1, where sqrt
+    means the square root, and b = - sqrt(2). Neither a nor b are rational numbers, but a + b = 1, which is rational.
+
+
+    <div align="right">
+      &#8718;
+    </div>
+
+    <h2> Exercises</h2>
+
+    <ol>
+      <p></p>
+      <li> State the converse of "If a and b are even integers then a+b is an even integer". Show that the converse is not true by producing a counter example.
+
+        <p></p>
+      </li>
+      <li> State the converse of "If a, b and c are real numbers such that a + b = c, then (a+b)
+        <sup>2</sup> = c<sup>2</sup>". Show that the converse is not true by producing a counter example.
+
+        <p></p>
+      </li>
+      <li> State the converse of "If a, b and c are integers such that a divides b, then a divides the product bc." Show that the converse is not true by producing a counter example.
+
+        <p></p>
+      </li>
+      <li> State the converse of "If a and b are rational numbers, then so is the product ab". Show that the converse is not true by producing a counter example.
+
+
+
+      </li>
+    </ol>
+
+
+    <h1 align="CENTER">If, and Only If</h1> Many theorems are stated in the form "P, if, and only if, Q". Another way to say the same things is: "Q is necessary, and sufficient for P". This means two things: "If P, Then Q" and "If Q, Then P". So to prove an "If, and Only If" theorem, you must
+    prove two implications.
+
+    <h2> Example: Division</h2> In this example we will use a very useful fact about integers, the so called <b>Division Algorithm</b>: If n and m are integers, then there are two other integers q and r, where 0 &lt;= r &lt; m, and such that n = qm + r. For example, if n = 103
+    and m = 15, then 103 = (6)(15) + 13. (That is, if we divide15 into 103, we get a quotient of q = 6, with a remainder of r = 13.)
+
+    <p><b>Theorem.</b> If a is an integer, then a is not evenly divisible by 3 if, and only if, a<sup>2</sup> -1 is evenly divisble by 3.
+
+    </p>
+    <p><b>Proof.</b> Since this is an "If, and Only If" theorem, we must prove two implications.
+
+    </p>
+    <p><b> ("If")</b> We must prove "a is not evenly divisible by 3 if a<sup>2</sup> -1 is evenly divisble by 3". So we assume that 3 evenly divides a<sup>2</sup> -1 = (a-1)(a+1). Since 3 is a prime number, 3 must evenly divide either a-1 or a+1. In either
+      case, it should be apparent that 3 cannot evenly divide a.
+
+    </p>
+    <p><b>("Only If").</b> We must prove "a is not evenly divisible by 3 only if a<sup>2</sup> -1 is evenly divisble by 3." This means "If a is not evenly divisible by 3, then a<sup>2</sup> -1 is evenly divisble by 3". This is where we use the division algorithm
+      stated above. We can write a = 3q + r, where r = 0, 1 or 2. Our assumption that a is not divisible by 3 implies r cannot be 0. If r =1, then a-1 = 3q and so 3 evenly divides a<sup>2</sup> -1 = (a-1)(a+1). A similar argument works if r = 2.
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+    Sometimes you can prove an "If, and Only If" assertion without explicitly dividng the proof into two parts. The next example illustrates how this might be done.
+
+    <h2>Example: A Division Rule</h2> You probably learned in school that a positive integer n is evenly divisble by 3 if the sum of the digits of n is divisble by 3. For example, 2620461 is evenly divisble by 3 since 2 + 6 + 2 + 0 + 4 + 6 + 1 = 21 = (3)(7). In fact, 2620461 = (3)(873487).
+    This condition is realy necessary and sufficient.
+
+    <p><b>Theorem.</b> A postive integer n is evenly divisible by 3 if, and only if, the sum of the digits of n is divisble by 3.
+
+    </p>
+    <p><b>Proof.</b> Suppose n is a positve integer whose digit representation is a<sub>0</sub>a<sub>1</sub>...a<sub>k</sub>. This means, n = a<sub>0</sub> + a<sub>1</sub> 10 + ...a<sub>k</sub> 10<sup>k</sup>. The digit sum is s = a<sub>0</sub> + a<sub>1</sub>      + ... + a<sub>k</sub>.
+
+    </p>
+    <p> Now, n -s = (a<sub>0</sub> + a<sub>1</sub> 10 + ...a<sub>k</sub> 10<sup>k</sup>) - (a<sub>0</sub> + a<sub>1</sub> + ... + a<sub>k</sub>) = a<sub>1</sub> 9 + a<sub>2</sub> 99 + ... + a<sub>k</sub> (99...9) (where the last term has k nines). So, clearly,
+      n - s is divisble by 3. It follows that n is divisible by 3 if, and only if, s is divisble by 3.
+
+
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+
+    <h2>
+Exercises</h2> Prove each of the following.
+    <ol>
+      <p></p>
+      <li> If a is an integer, then a is not evenly divisible by 5 if, and only if, a<sup>4</sup> -1 is evenly divisble by 5.
+
+        <p></p>
+      </li>
+      <li> For two integers a and b, a+b is odd if, and only if, exactly one of the integers, a or b, is odd.
+
+        <p></p>
+      </li>
+      <li> For two integers a and b, the product ab is even if and only if at least one of the integers, a or b, is even.
+
+        <p></p>
+      </li>
+      <li> A postive integer n is evenly divisible by 9 if, and only if, the sum of the digits of n is divisble by 9.
+
+        <p></p>
+      </li>
+      <li> A postive integer n is evenly divisible by 11 if, and only if, the difference of the sums of the digits in the even and odd positions in n is divisible by 11.
+      </li>
+    </ol>
+
+    <h1 align="CENTER">Proof by Exhaustion (Case by Case)</h1> Sometimes the most straight forward, if not the most elegant, way to construct a proof is by checking cases.
+
+    <h2>Example: Divisibility</h2>
+
+    <p><b>Theorem.</b> If n is a positive integer then n<sup>7</sup> - n is divisible by 7.
+
+    </p>
+    <p><b>Proof.</b> First we factor n<sup>7</sup> - n = n(n<sup>6</sup> - 1) = n(n<sup>3</sup> - 1)(n
+      <sup>3</sup> + 1) = n(n-1)(n<sup>2</sup> + n + 1)(n+1)(n<sup>2</sup> - n + 1). Now there are 7 cases to consider, depending on n = 7 q + r where r = 0, 1, 2, 3, 4, 5, 6, 7.
+
+    </p>
+    <p>Case 1: n = 7q. Then n<sup>7</sup> - n has the factor n, which is divisible by 7.
+
+    </p>
+    <p>Case 2: n = 7q + 1. Then n<sup>7</sup> - n has the factor n-1 = 7q.
+
+    </p>
+    <p>Case 3: n = 7q + 2. Then the factor n<sup>2</sup> + n + 1 = (7q + 2)<sup>2</sup> + (7q+2) + 1 = 49 q
+      <sup>2</sup> + 35 q + 7 is clearly divisible by 7.
+
+    </p>
+    <p>Case 4: n = 7q + 3. Then the factor n<sup>2</sup> - n + 1 = (7q + 3)<sup>2</sup> - (7q+3) + 1 = 49 q<sup>2</sup> + 35 q + 7 is clearly divisible by 7.
+
+    </p>
+    <p>Case 5: n = 7q + 4. Then the factor n<sup>2</sup> + n + 1 = (7q + 4)<sup>2</sup> + (7q+4) + 1 = 49 q<sup>2</sup> + 63 q + 21 is clearly divisible by 7.
+
+    </p>
+    <p>Case 6: n = 7q + 5. Then the factor n<sup>2</sup> - n + 1 = (7q + 5)<sup>2</sup> - (7q+5) + 1 = 49 q<sup>2</sup> + 63 q + 21 is clearly divisible by 7.
+
+    </p>
+    <p>Case 7: n = 7q + 6. Then the factor n + 1 = 7q +7 is clearly divisible by 7.
+
+
+
+    </p>
+    <div align="right">
+      &#8718;
+    </div>
+
+
+
+    <h2> Exercises</h2>
+
+    <p>Prove each of the following using a case by case analysis.
+
+
+    </p>
+    <ol>
+      <p></p>
+      <li> The "Triangle Inequality" for real numbers, |a + b| is less than or equal to |a| + |b|. (The cases coorespond to the signs (plus or minus) of a and b.)
+
+
+      </li>
+    </ol>
+
+
+  </body>
+
+</html>
